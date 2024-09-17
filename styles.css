@@ -17,8 +17,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #ff0033;
-    color: white;
+    background-color: #c96377;
+    color: rgb(243, 187, 187);
     position: fixed;
     top: 0;
     width: 100%;
@@ -55,7 +55,7 @@ nav {
 
 .auth-buttons button {
     background-color: white;
-    color: #ff0033;
+    color: #d8697f;
     border: none;
     padding: 0.5rem 1rem;
     margin-left: 10px;
@@ -77,7 +77,7 @@ section {
 }
 
 #home {
-    background-color: #ffcc00;
+    background-color: #aae3f5;
 }
 
 h1 {
@@ -93,7 +93,7 @@ h1 {
 .cta-btn {
     padding: 10px 20px;
     font-size: 1.2rem;
-    background-color: #ff0033;
+    background-color: #e296a5;
     color: white;
     border: none;
     cursor: not-allowed;
@@ -106,3 +106,37 @@ section:nth-of-type(even) {
 section:nth-of-type(odd) {
     background-color: #ffe5b4;
 }
+
+/* Sección de dos columnas en la página de Papá Noel */
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.left-column, .right-column {
+    flex-basis: 48%; /* Cada columna toma aproximadamente el 48% del espacio */
+}
+
+/* Ajusta la galería de imágenes */
+.left-column img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.right-column {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* Aseguramos que se ajusten bien en pantallas pequeñas */
+@media (max-width: 768px) {
+    .left-column, .right-column {
+        flex-basis: 100%; /* Las columnas se apilan en pantallas más pequeñas */
+    }
+}
+
