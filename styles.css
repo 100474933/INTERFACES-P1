@@ -124,7 +124,7 @@ section:nth-of-type(odd) {
 .left-column img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .right-column {
@@ -138,5 +138,42 @@ section:nth-of-type(odd) {
     .left-column, .right-column {
         flex-basis: 100%; /* Las columnas se apilan en pantallas más pequeñas */
     }
+}
+
+/* Estilos para la imagen de la Fábrica de Juguetes */
+.image-container {
+    text-align: center; /* Centra la imagen */
+    margin: 20px 0;
+}
+
+.image-container img {
+    max-width: 100%; /* Ajusta la imagen al tamaño del contenedor */
+    height: auto;
+    border-radius: 10px; /* Bordes redondeados opcionales */
+}
+
+#juguetes {
+    background-image: url('fabrica papa noel.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 20px;
+    color: white; /* Ajusta el color del texto para que sea visible sobre la imagen */
+}
+#juguetes {
+    position: relative; /* Necesario para que los elementos posicionados absolutamente se alineen en relación a esta sección */
+    padding: 100px 20px;
+    color: white; /* Ajusta el color del texto para que sea visible sobre la imagen de fondo si es necesario */
+}
+
+.image-container {
+    position: absolute;
+    bottom: 10px; /* Ajusta la distancia desde el borde inferior */
+    right: 10px; /* Ajusta la distancia desde el borde derecho */
+}
+
+.image-container img {
+    max-width: 200px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
 }
 
