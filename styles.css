@@ -18,7 +18,7 @@ nav {
     align-items: center;
     padding: 1rem 2rem;
     background-color: #c96377;
-    color: rgb(243, 187, 187);
+    color: rgb(245, 245, 245);
     position: fixed;
     top: 0;
     width: 100%;
@@ -104,7 +104,7 @@ section:nth-of-type(even) {
 }
 
 section:nth-of-type(odd) {
-    background-color: #ffe5b4;
+    background-color: #a5d6df;
 }
 
 /* Sección de dos columnas en la página de Papá Noel */
