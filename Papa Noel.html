@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+        <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Viaje de Papá Noel</title>
+            <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
+        </head>
+        <body>
+            <!-- Barra de Navegación -->
+            <nav>
+                <div class="logo">Mundo de Papá Noel</div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">HOME</a></li>
+                    <li><a href="#viaje">PAPA NOEL</a></li>
+                    <li><a href="cartas.html">CARTAS</a></li>
+                    <li><a href="contacto.html">¡ENVIA TU CARTA!</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <button class="login-btn" disabled>Iniciar Sesión</button>
+                    <button class="register-btn" disabled>Registrarse</button>
+                </div>
+            </nav>
+            <!-- Sección de Viaje -->
+            <section id="viaje">
+                <h2>El Viaje de Papá Noel</h2>
+                <p>Información sobre el viaje de Papá Noel alrededor del mundo.</p>
+                <img src="papa noel esquiando.gif" alt="gif esquiando de Papá Noel">
+                <h2>Cuenta atrás para Navidad</h2>
+                <div id="contador"></div>
+                <script>
+                    function actualizarCuentaAtras() {
+                        const fechaActual = new Date();
+                        const proximaNavidad = new Date(fechaActual.getFullYear(), 11, 25); // 11 es diciembre (meses en JavaScript son 0-11)
+            
+                        // Si ya pasó el 25 de diciembre este año, ajusta para el próximo año
+                        if (fechaActual > proximaNavidad) {
+                            proximaNavidad.setFullYear(proximaNavidad.getFullYear() + 1);
+                        }
+            
+                        const diferencia = proximaNavidad - fechaActual;
+                        const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+                        const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+                        const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+            
+                        document.getElementById('contador').innerHTML = 
+                            `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+                    }
+            
+                    // Actualiza la cuenta atrás cada segundo
+                    setInterval(actualizarCuentaAtras, 1000);
+                </script>
+    </body>
+    
+    </html>
