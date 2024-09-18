@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viaje de Papá Noel</title>
     <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
@@ -22,7 +22,7 @@
         </div>
     </nav>
 
-    <!-- Primera página: Contador -->
+    <!-- Primera página: Home -->
     <section id="home">
         <div class="columns">
             <!-- Columna izquierda para la galería de imágenes -->
@@ -40,7 +40,7 @@
     </section>
     
 
-    <!-- Secciones de la web -->
+    <!-- contador -->
     <section id="viaje">
         <h2>El Viaje de Papá Noel</h2>
         <p>Información sobre el viaje de Papá Noel alrededor del mundo.</p>
@@ -48,12 +48,19 @@
     </section>
     
     <section id="juguetes">
-        <h2>La Fábrica de Juguetes</h2>
-        <p>Conoce el lugar mágico donde se fabrican los juguetes para todos los niños del mundo.</p>
-        <div class="image-container">
+        <!-- Contenedor para el video de fondo -->
+        <div class="video-background">
+            <video autoplay muted loop>
+                <source src="papa noel y los elfos.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="content">
+            <h2>La Fábrica de Juguetes</h2>
+            <p>Conoce el lugar mágico donde se fabrican los juguetes para todos los niños del mundo.</p>
             <img src="papa noel arrastrando bolsa.gif" alt="GIF arrastrando bolsa de Papá Noel">
         </div>
     </section>
+    
     
 
     <section id="contacto">
