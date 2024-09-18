@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Times New Roman', Times, serif, sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f9f9f9;
     overflow-x: hidden;
@@ -17,8 +17,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #c96377;
-    color: rgb(245, 245, 245);
+    background-color: #be2645;
+    color: white;
     position: fixed;
     top: 0;
     width: 100%;
@@ -26,7 +26,7 @@ nav {
 }
 
 .logo {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
@@ -54,8 +54,8 @@ nav {
 }
 
 .auth-buttons button {
-    background-color: rgb(236, 236, 236);
-    color: #d8697f;
+    background-color: white;
+    color: #db8394;
     border: none;
     padding: 0.5rem 1rem;
     margin-left: 10px;
@@ -77,7 +77,7 @@ section {
 }
 
 #home {
-    background-color: #aae3f5;
+    background-color: #b0d2e9;
 }
 
 h1 {
@@ -93,7 +93,7 @@ h1 {
 .cta-btn {
     padding: 10px 20px;
     font-size: 1.2rem;
-    background-color: #e296a5;
+    background-color: #ff0033;
     color: white;
     border: none;
     cursor: not-allowed;
@@ -104,7 +104,7 @@ section:nth-of-type(even) {
 }
 
 section:nth-of-type(odd) {
-    background-color: #a5d6df;
+    background-color: #ffe5b4;
 }
 
 /* Sección de dos columnas en la página de Papá Noel */
@@ -124,7 +124,7 @@ section:nth-of-type(odd) {
 .left-column img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .right-column {
@@ -140,23 +140,12 @@ section:nth-of-type(odd) {
     }
 }
 
-/* Estilos para la imagen de la Fábrica de Juguetes */
-.image-container {
-    text-align: center; /* Centra la imagen */
-    margin: 20px 0;
-}
-
-.image-container img {
-    max-width: 100%; /* Ajusta la imagen al tamaño del contenedor */
-    height: auto;
-    border-radius: 10px; /* Bordes redondeados opcionales */
-}
-
 #juguetes {
     position: relative;
     padding: 100px 20px;
     color: white; /* Asegúrate de que el texto sea visible sobre el video */
     overflow: hidden; /* Asegura que el contenido no se salga del contenedor */
+    height: 500px; /* Ajusta la altura según el contenido */
 }
 
 .video-background {
@@ -191,4 +180,3 @@ section:nth-of-type(odd) {
     max-width: 100px;
     height: auto;
 }
-
