@@ -22,31 +22,6 @@
             <a href="#register-form" class="register-btn">Registrarse</a>
         </div>
     </nav>
-
-    <!-- Formulario de Inicio de Sesión -->
-    <div id="login-form" class="form-container">
-        <form action="#!" onsubmit="this.parentElement.style.display='none'">
-            <h2>Iniciar Sesión</h2>
-            <label for="login-email">Email:</label>
-            <input type="email" id="login-email" name="email" required>
-            <label for="login-password">Contraseña:</label>
-            <input type="password" id="login-password" name="password" required>
-            <button type="submit">Enviar</button>
-        </form>
-        <a href="#" class="close-btn">Cerrar</a>
-    </div>
-
-    <!-- Formulario de Registro -->
-    <div id="register-form" class="form-container">
-        <form onsubmit="ocultarFormulario('register-form')">
-            <h2>Registrarse</h2>
-            <label for="register-email">Email:</label>
-            <input type="email" id="register-email" name="email" required>
-            <label for="register-password">Contraseña:</label>
-            <input type="password" id="register-password" name="password" required>
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
     
     <!-- Sección de Home -->
     <section id="home">
@@ -90,6 +65,10 @@
             <input type="text" id="nombre" name="nombre" required>
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
+            <label for="pais">País:</label>
+            <input type="text" id="pais" name="pais" required>
+            <label for="ciudad">Ciudad:</label>
+            <input type="text" id="ciudad" name="ciudad" required>
             <label for="carta">Carta:</label>
             <textarea id="carta" name="carta" required></textarea>
             <button type="submit">Enviar Carta</button>
