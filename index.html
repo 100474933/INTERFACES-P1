@@ -18,11 +18,36 @@
             <li><a href="#juega">JUEGA</a></li>
         </ul>
         <div class="auth-buttons">
-            <button class="login-btn" disabled>Iniciar Sesión</button>
-            <button class="register-btn" disabled>Registrarse</button>
+            <a href="#login-form" class="login-btn">Iniciar Sesión</a>
+            <a href="#register-form" class="register-btn">Registrarse</a>
         </div>
     </nav>
 
+    <!-- Formulario de Inicio de Sesión -->
+    <div id="login-form" class="form-container">
+        <form action="#!" onsubmit="this.parentElement.style.display='none'">
+            <h2>Iniciar Sesión</h2>
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" name="email" required>
+            <label for="login-password">Contraseña:</label>
+            <input type="password" id="login-password" name="password" required>
+            <button type="submit">Enviar</button>
+        </form>
+        <a href="#" class="close-btn">Cerrar</a>
+    </div>
+
+    <!-- Formulario de Registro -->
+    <div id="register-form" class="form-container">
+        <form onsubmit="ocultarFormulario('register-form')">
+            <h2>Registrarse</h2>
+            <label for="register-email">Email:</label>
+            <input type="email" id="register-email" name="email" required>
+            <label for="register-password">Contraseña:</label>
+            <input type="password" id="register-password" name="password" required>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    
     <!-- Sección de Home -->
     <section id="home">
         <div class="home-container">
@@ -32,7 +57,13 @@
             <div class="home-text">
                 <h2>Bienvenido al Mundo de Papá Noel</h2>
                 <p>Descubre la historia y las aventuras de Papá Noel.</p>
-                <p>La historia de Papá Noel se remonta a muchos siglos atrás, cuando San Nicolás, un obispo conocido por su generosidad y amor por los niños, se convirtió en la inspiración para el personaje que hoy conocemos como Papá Noel. A lo largo de los años, la figura de Papá Noel ha evolucionado, pero su espíritu de dar y compartir alegría durante la temporada navideña ha permanecido constante.</p>
+                <p>La figura de Papá Noel tiene sus raíces en la historia de <span>San Nicolás de Mira</span>, un obispo cristiano que vivió en el siglo IV en lo que hoy es Turquía. San Nicolás era famoso por su generosidad y por realizar milagros, especialmente ayudando a los más necesitados. Una de las leyendas más populares cuenta cómo arrojó bolsas de oro por la chimenea de una familia pobre para evitar que las hijas fueran vendidas como esclavas. Este acto de bondad dio origen a la tradición de colgar calcetines o botas en la chimenea para que sean llenados de regalos. Así, San Nicolás se convirtió en un símbolo de generosidad y protección, especialmente para los niños.
+
+                    <p>A medida que la devoción por San Nicolás se extendió por Europa, la figura fue transformándose en diferentes culturas. En Holanda, San Nicolás fue conocido como <span>Sinterklaas</span>, quien visitaba a los niños en diciembre, dejándoles regalos o carbón, dependiendo de su comportamiento. Cuando los colonos holandeses emigraron a América, trajeron consigo esta tradición, que más tarde se combinaría con otras influencias culturales. La evolución de Sinterklaas en el nuevo mundo comenzó a darle forma a la figura moderna de Papá Noel, especialmente en el siglo XIX.</p>
+                    
+                    <p>El Papá Noel que conocemos hoy fue moldeado en gran parte en Estados Unidos. El poema <span>"Una visita de San Nicolás"</span>, publicado en 1823 por Clement Clarke Moore, popularizó muchas de las características modernas de Santa Claus: un hombre alegre y regordete que viaja en un trineo tirado por renos y entra por la chimenea para dejar regalos. Más tarde, la figura se consolidó con las ilustraciones de <span>Thomas Nast</span> y las campañas publicitarias de Coca-Cola en la década de 1930, que le dieron su aspecto clásico: un hombre con barba blanca, traje rojo y botas negras. Así, Papá Noel se convirtió en el símbolo global de la Navidad que hoy conocemos.</p>
+                    
+                    <p>De este modo, a lo largo de los siglos, la leyenda de San Nicolás, las tradiciones europeas y las influencias culturales americanas crearon la figura de Papá Noel. Hoy, esta figura es celebrada en todo el mundo como el símbolo de la generosidad y el espíritu navideño, trayendo regalos y alegría a los hogares durante la Navidad.</p></p>
             </div>
         </div>
     </section>
@@ -111,41 +142,5 @@
         </div>
     </section>
 
-    <script>
-        function jugar(eleccionUsuario) {
-            const opciones = ['piedra', 'papel', 'tijeras'];
-            const eleccionComputadora = opciones[Math.floor(Math.random() * 3)];
-            let resultado = '';
-
-            if (eleccionUsuario === eleccionComputadora) {
-                resultado = 'Empate';
-            } else if (
-                (eleccionUsuario === 'piedra' && eleccionComputadora === 'tijeras') ||
-                (eleccionUsuario === 'papel' && eleccionComputadora === 'piedra') ||
-                (eleccionUsuario === 'tijeras' && eleccionComputadora === 'papel')
-            ) {
-                resultado = '¡Ganaste! ' + eleccionUsuario + ' vence a ' + eleccionComputadora;
-            } else {
-                resultado = 'Perdiste. ' + eleccionComputadora + ' vence a ' + eleccionUsuario;
-            }
-
-            document.getElementById('resultado').textContent = resultado;
-        }
-
-        // Función para calcular los días restantes para Navidad
-        function calcularDiasParaNavidad() {
-            const hoy = new Date();
-            const navidad = new Date(hoy.getFullYear(), 11, 25); // 25 de diciembre
-            if (hoy > navidad) {
-                navidad.setFullYear(navidad.getFullYear() + 1);
-            }
-            const unDia = 1000 * 60 * 60 * 24;
-            const diasRestantes = Math.ceil((navidad.getTime() - hoy.getTime()) / unDia);
-            document.getElementById('countdown').textContent = diasRestantes + ' días';
-        }
-
-        // Llamar a la función para calcular los días restantes para Navidad
-        calcularDiasParaNavidad();
-    </script>
 </body>
 </html>
