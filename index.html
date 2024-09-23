@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viaje de Papá Noel</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
+    <title>Mundo de Papá Noel</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Enlace al archivo CSS -->
 </head>
 <body>
     <!-- Barra de Navegación -->
@@ -12,10 +12,10 @@
         <div class="logo">Mundo de Papá Noel</div>
         <ul class="nav-menu">
             <li><a href="#home" class="active">HOME</a></li>
-            <li><a href="Papa Noel.html">PAPA NOEL</a></li>
-            <li><a href="cartas.html">CARTAS</a></li>
-            <li><a href="contacto.html">¡ENVIA TU CARTA!</a></li>
-            <li><a href="juega.html">Juega</a></li>
+            <li><a href="#papa_noel">PAPA NOEL</a></li>
+            <li><a href="#cartas">CARTAS</a></li>
+            <li><a href="#contacto">¡ENVIA TU CARTA!</a></li>
+            <li><a href="#juega">JUEGA</a></li>
         </ul>
         <div class="auth-buttons">
             <button class="login-btn" disabled>Iniciar Sesión</button>
@@ -23,22 +23,129 @@
         </div>
     </nav>
 
-    <!-- Primera página: Home -->
+    <!-- Sección de Home -->
     <section id="home">
-        <div class="columns">
-            <!-- Columna izquierda para la galería de imágenes -->
-            <div class="left-column">
-                <!-- Puedes agregar más imágenes para una galería -->
-                <img src="imagenes/path_to_your_image2.jpg" alt="Otra imagen de Papá Noel">
+        <div class="home-container">
+            <div class="home-image">
+                <img src="imagenes/path_to_your_image2.jpg" alt="Papá Noel">
             </div>
-            
-            <!-- Columna derecha para el texto -->
-            <div class="right-column">
-                <h2>Papá Noel</h2>
-                <p>Conocido en muchos países como Santa Claus, Papá Noel es una figura legendaria de la Navidad que trae regalos a los niños la noche del 24 de diciembre. Su origen se remonta a San Nicolás, un obispo conocido por su generosidad y ayuda a los más necesitados. Hoy en día, es reconocido como el alegre hombre que viaja en un trineo tirado por renos, entregando alegría en todo el mundo.</p>
+            <div class="home-text">
+                <h2>Bienvenido al Mundo de Papá Noel</h2>
+                <p>Descubre la historia y las aventuras de Papá Noel.</p>
+                <p>La historia de Papá Noel se remonta a muchos siglos atrás, cuando San Nicolás, un obispo conocido por su generosidad y amor por los niños, se convirtió en la inspiración para el personaje que hoy conocemos como Papá Noel. A lo largo de los años, la figura de Papá Noel ha evolucionado, pero su espíritu de dar y compartir alegría durante la temporada navideña ha permanecido constante.</p>
             </div>
         </div>
     </section>
 
+    <!-- Sección de Papá Noel -->
+    <section id="papa_noel">
+        <h2>Conoce a Papá Noel</h2>
+        <div class="papa-noel-container">
+            <div class="papa-noel-image">
+                <img src="imagenes/papa noel esquiando.gif" alt="Papá Noel esquiando">
+            </div>
+            <div class="countdown">
+                <h3>Días restantes para Navidad:</h3>
+                <p id="countdown"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto">
+        <h2>¡Envía tu Carta a Papá Noel!</h2>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="carta">Carta:</label>
+            <textarea id="carta" name="carta" required></textarea>
+            <button type="submit">Enviar Carta</button>
+        </form>
+    </section>
+
+    <!-- Sección de Cartas -->
+    <section id="cartas">
+        <h2>Cartas a Papá Noel</h2>
+        <p>Lee las cartas enviadas por niños de todo el mundo.</p>
+        <div class="cartas-container">
+            <div class="carta">
+                <h3>Niño 1</h3>
+                <p>Querido Papá Noel, este año me he portado muy bien y me gustaría recibir un coche de juguete.</p>
+            </div>
+            <div class="carta">
+                <h3>Niño 2</h3>
+                <p>Querido Papá Noel, me gustaría tener una bicicleta nueva para poder pasear con mis amigos.</p>
+            </div>
+            <div class="carta">
+                <h3>Niño 3</h3>
+                <p>Querido Papá Noel, por favor tráeme un libro de cuentos para leer antes de dormir.</p>
+            </div>
+            <div class="carta">
+                <h3>Niño 4</h3>
+                <p>Querido Papá Noel, me encantaría recibir un set de pinturas para poder dibujar y pintar.</p>
+            </div>
+            <div class="carta">
+                <h3>Niño 5</h3>
+                <p>Querido Papá Noel, este año quiero un balón de fútbol para jugar con mis amigos.</p>
+            </div>
+            <div class="carta">
+                <h3>Niño 6</h3>
+                <p>Querido Papá Noel, me gustaría tener una muñeca nueva para jugar con ella.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Juega -->
+    <section id="juega">
+        <h2>Juega con Papá Noel</h2>
+        <p>Diviértete con nuestro juego de Piedra, Papel, Tijeras.</p>
+        <div id="juego">
+            <p>Elige una opción:</p>
+            <button onclick="jugar('piedra')">Piedra</button>
+            <button onclick="jugar('papel')">Papel</button>
+            <button onclick="jugar('tijeras')">Tijeras</button>
+            <p id="resultado"></p>
+            <img src="imagenes/papa noel arrastrando bolsa.gif" alt="Papá Noel">
+        </div>
+    </section>
+
+    <script>
+        function jugar(eleccionUsuario) {
+            const opciones = ['piedra', 'papel', 'tijeras'];
+            const eleccionComputadora = opciones[Math.floor(Math.random() * 3)];
+            let resultado = '';
+
+            if (eleccionUsuario === eleccionComputadora) {
+                resultado = 'Empate';
+            } else if (
+                (eleccionUsuario === 'piedra' && eleccionComputadora === 'tijeras') ||
+                (eleccionUsuario === 'papel' && eleccionComputadora === 'piedra') ||
+                (eleccionUsuario === 'tijeras' && eleccionComputadora === 'papel')
+            ) {
+                resultado = '¡Ganaste! ' + eleccionUsuario + ' vence a ' + eleccionComputadora;
+            } else {
+                resultado = 'Perdiste. ' + eleccionComputadora + ' vence a ' + eleccionUsuario;
+            }
+
+            document.getElementById('resultado').textContent = resultado;
+        }
+
+        // Función para calcular los días restantes para Navidad
+        function calcularDiasParaNavidad() {
+            const hoy = new Date();
+            const navidad = new Date(hoy.getFullYear(), 11, 25); // 25 de diciembre
+            if (hoy > navidad) {
+                navidad.setFullYear(navidad.getFullYear() + 1);
+            }
+            const unDia = 1000 * 60 * 60 * 24;
+            const diasRestantes = Math.ceil((navidad.getTime() - hoy.getTime()) / unDia);
+            document.getElementById('countdown').textContent = diasRestantes + ' días';
+        }
+
+        // Llamar a la función para calcular los días restantes para Navidad
+        calcularDiasParaNavidad();
+    </script>
 </body>
 </html>
