@@ -25,11 +25,26 @@
     
     <!-- Sección de Home -->
     <section id="home">
-        <div class="home-container">
-            <div class="home-image">
+    </div>
+    <h2>Conoce a Papá Noel</h2>
+    <div class="home-container">
+        <div class="home-image">
+            <img src="imagenes/papa noel esquiando.gif" alt="Papá Noel esquiando">
+        </div>
+        <div class="countdown">
+            <h3>Días restantes para Navidad:</h3>
+            <p id="countdown"></p>
+        </div>
+    </div>
+    </section>
+
+    <!-- Sección de Papá Noel -->
+    <section id="papa_noel">
+        <div class="papa-noel-container"></div>
+            <div class="papa-noel-image">
                 <img src="imagenes/path_to_your_image2.jpg" alt="Papá Noel">
             </div>
-            <div class="home-text">
+            <div class="papa-noel-text">
                 <h2>Bienvenido al Mundo de Papá Noel</h2>
                 <p>Descubre la historia y las aventuras de Papá Noel.</p>
                 <p>La figura de Papá Noel tiene sus raíces en la historia de <span>San Nicolás de Mira</span>, un obispo cristiano que vivió en el siglo IV en lo que hoy es Turquía. San Nicolás era famoso por su generosidad y por realizar milagros, especialmente ayudando a los más necesitados. Una de las leyendas más populares cuenta cómo arrojó bolsas de oro por la chimenea de una familia pobre para evitar que las hijas fueran vendidas como esclavas. Este acto de bondad dio origen a la tradición de colgar calcetines o botas en la chimenea para que sean llenados de regalos. Así, San Nicolás se convirtió en un símbolo de generosidad y protección, especialmente para los niños.
@@ -40,21 +55,6 @@
                     
                     <p>De este modo, a lo largo de los siglos, la leyenda de San Nicolás, las tradiciones europeas y las influencias culturales americanas crearon la figura de Papá Noel. Hoy, esta figura es celebrada en todo el mundo como el símbolo de la generosidad y el espíritu navideño, trayendo regalos y alegría a los hogares durante la Navidad.</p></p>
             </div>
-        </div>
-    </section>
-
-    <!-- Sección de Papá Noel -->
-    <section id="papa_noel">
-        <h2>Conoce a Papá Noel</h2>
-        <div class="papa-noel-container">
-            <div class="papa-noel-image">
-                <img src="imagenes/papa noel esquiando.gif" alt="Papá Noel esquiando">
-            </div>
-            <div class="countdown">
-                <h3>Días restantes para Navidad:</h3>
-                <p id="countdown"></p>
-            </div>
-        </div>
     </section>
 
     <!-- Sección de Contacto -->
@@ -110,13 +110,12 @@
     <!-- Sección de Juega -->
     <section id="juega">
         <h2>Juega con Papá Noel</h2>
-        <p>Diviértete con nuestro juego de Piedra, Papel, Tijeras.</p>
+        <p>¡Diviértete con nuestros juegos!</p>
         <div id="juego">
             <p>Elige una opción:</p>
-            <button onclick="jugar('piedra')">Piedra</button>
-            <button onclick="jugar('papel')">Papel</button>
-            <button onclick="jugar('tijeras')">Tijeras</button>
-            <p id="resultado"></p>
+            <button onclick="juego('JUEGO1')">JUEGO1</button>
+            <button onclick="jugar('JUEGO2')">JUEGO2</button>
+            <button onclick="jugar('JUEGO3')">JUEGO3</button>
             <img src="imagenes/papa noel arrastrando bolsa.gif" alt="Papá Noel">
         </div>
     </section>

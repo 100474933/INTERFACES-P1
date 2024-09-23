@@ -1,3 +1,11 @@
+
+
+/*-----------GENERAL------------GENERAL-----------------GENERAL------------GENERAL--------------GENERAL------------------GENERAL----------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------GENERAL------------GENERAL-----------------GENERAL------------GENERAL--------------GENERAL------------------GENERAL----------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------GENERAL------------GENERAL-----------------GENERAL------------GENERAL--------------GENERAL------------------GENERAL----------------------*/
+
 /* Reset CSS */
 /* Resetea los márgenes y el padding de todos los elementos, y establece el box-sizing a border-box */
 * {
@@ -87,26 +95,9 @@ nav {
 }
 
 
-.form-container button:hover {
+.form-container button:hover, button:active  {
     background-color: #0056b3;
     transform: scale(1.05);
-}
-
-.form-container button:active {
-    background-color: #004494;
-    transform: scale(0.95);
-}
-
-.close-btn {
-    display: block;
-    margin-top: 10px;
-    text-align: center;
-    color: #007bff;
-    text-decoration: none;
-}
-
-.close-btn:hover {
-    text-decoration: underline;
 }
 
 /* Estilos para las secciones del documento */
@@ -121,14 +112,62 @@ section {
     text-align: center;
 }
 
-/* Estilos específicos para la sección con id "home" */
-/* Define el color de fondo */
+/*-----------HOME------------HOME-----------------HOME------------HOME--------------HOME------------------HOME----------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------HOME------------HOME-----------------HOME------------HOME--------------HOME------------------HOME----------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------HOME------------HOME-----------------HOME------------HOME--------------HOME------------------HOME----------------------*/
 #home {
     background-color: #b0d2e9;
 }
 
+.
+/*-----------PAPA NOEL------------PAPA NOEL-----------------PAPA NOEL------------PAPA NOEL--------------PAPA NOEL-------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------PAPA NOEL------------PAPA NOEL-----------------PAPA NOEL------------PAPA NOEL--------------PAPA NOEL-------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------PAPA NOEL------------PAPA NOEL-----------------PAPA NOEL------------PAPA NOEL--------------PAPA NOEL-------------------*/
+
+/* Estilos para el contenedor de la sección Papá Noel */
+.papa-noel-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Estilos para la imagen en la sección Papá Noel */
+.papa-noel-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.papa-noel-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Estilos para el texto en la sección Papá Noel */
+.papa-noel-text {
+    flex: 2;
+    min-width: 300px;
+    text-align: justify;
+}
+
+.papa-noel-text h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.papa-noel-text p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
 /* Estilos para el contenedor de la sección Home */
-.home-container {
+.papa-noel-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -136,34 +175,35 @@ section {
 }
 
 /* Estilos para la imagen en la sección Home */
-.home-image {
+.papa-noel-image {
     flex: 1;
     min-width: 300px;
 }
 
-.home-image img {
+.papa-noel-image img {
     width: 100%;
     height: auto;
     border-radius: 8px;
 }
 
 /* Estilos para el texto en la sección Home */
-.home-text {
+.papa-noel-text {
     flex: 2;
     min-width: 300px;
     text-align: justify;
 }
 
-.home-text h2 {
+.papa-noel-text h2 {
     font-size: 2rem;
     margin-bottom: 10px;
     text-align: justify;
 }
 
-.home-text p {
+.papa-noel-text p {
     font-size: 1rem;
     margin-bottom: 10px;
 }
+
 
 /* Estilos para los spans */
 span {
@@ -171,44 +211,11 @@ span {
     font-weight: bold;
 }
 
-/* Estilos para los encabezados h1 */
-/* Define el tamaño de la fuente y el margen inferior */
-h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-/* Estilos para los botones de llamada a la acción */
-/* Define el padding, el tamaño de la fuente, el color de fondo, el color del texto y elimina el borde */
-.cta-btn {
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    background-color: #ff0033;
-    color: white;
-    border: none;
-    cursor: not-allowed;
-}
-
-/* Estilos para las secciones pares */
-/* Define el color de fondo */
-section:nth-of-type(even) {
-    background-color: #f0f0f0;
-}
-
-/* Estilos para las secciones impares */
-/* Define el color de fondo */
-section:nth-of-type(odd) {
-    background-color: #ffe5b4;
-}
-
-/* Estilos para el contador */
-/* Define el tamaño de la fuente, el color del texto, la alineación del texto y elimina la decoración del texto */
-#contador {
-    font-size: 2em;
-    color: #ff0000; /* Rojo navideño */
-    text-align: center;
-    text-decoration: none;
-}
+/*-----------CARTAS------------CARTAS-----------------CARTAS------------CARTAS--------------CARTAS------------------CARTAS----------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------CARTAS------------CARTAS-----------------CARTAS------------CARTAS--------------CARTAS------------------CARTAS----------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------CARTAS------------CARTAS-----------------CARTAS------------CARTAS--------------CARTAS------------------CARTAS----------------------*/
 
 /* Estilos para el contenedor de cartas */
 /* Define el diseño de la cuadrícula y el espacio entre elementos */
@@ -244,6 +251,11 @@ section:nth-of-type(odd) {
     color: #333;
 }
 
+/*-----------JUEGO------------JUEGO-----------------JUEGO------------JUEGO--------------JUEGO------------------JUEGO----------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------JUEGO------------JUEGO-----------------JUEGO------------JUEGO--------------JUEGO------------------JUEGO----------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------JUEGO------------JUEGO-----------------JUEGO------------JUEGO--------------JUEGO------------------JUEGO----------------------*/
 /* Estilos para la sección de juegos */
 /* Define la alineación del texto y el padding */
 #juego {
@@ -262,6 +274,11 @@ section:nth-of-type(odd) {
     margin-top: 20px;
     font-size: 1.2rem;
 }
+/*-----------CONTACTO------------CONTACTO-----------------CONTACTO------------CONTACTO--------------CONTACTO------------------CONTACTO----------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------CONTACTO------------CONTACTO-----------------CONTACTO------------CONTACTO--------------CONTACTO------------------CONTACTO----------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------CONTACTO------------CONTACTO-----------------CONTACTO------------CONTACTO--------------CONTACTO------------------CONTACTO----------------------*/
 
 /* Estilos para la sección de contacto */
 /* Define el padding, el color de fondo, el radio del borde, la sombra, el ancho máximo y el margen */
