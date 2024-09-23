@@ -111,7 +111,6 @@ section {
     align-items: center;
     text-align: center;
 }
-
 /*-----------HOME------------HOME-----------------HOME------------HOME--------------HOME------------------HOME----------------------*/
 /*----------------------------------------------------------------------------------------------------------------------------------*/
 /*-----------HOME------------HOME-----------------HOME------------HOME--------------HOME------------------HOME----------------------*/
@@ -121,53 +120,8 @@ section {
     background-color: #b0d2e9;
 }
 
-.
-/*-----------PAPA NOEL------------PAPA NOEL-----------------PAPA NOEL------------PAPA NOEL--------------PAPA NOEL-------------------*/
-/*----------------------------------------------------------------------------------------------------------------------------------*/
-/*-----------PAPA NOEL------------PAPA NOEL-----------------PAPA NOEL------------PAPA NOEL--------------PAPA NOEL-------------------*/
-/*----------------------------------------------------------------------------------------------------------------------------------*/
-/*-----------PAPA NOEL------------PAPA NOEL-----------------PAPA NOEL------------PAPA NOEL--------------PAPA NOEL-------------------*/
-
-/* Estilos para el contenedor de la sección Papá Noel */
-.papa-noel-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-}
-
-/* Estilos para la imagen en la sección Papá Noel */
-.papa-noel-image {
-    flex: 1;
-    min-width: 300px;
-}
-
-.papa-noel-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-/* Estilos para el texto en la sección Papá Noel */
-.papa-noel-text {
-    flex: 2;
-    min-width: 300px;
-    text-align: justify;
-}
-
-.papa-noel-text h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    text-align: justify;
-}
-
-.papa-noel-text p {
-    font-size: 1rem;
-    margin-bottom: 10px;
-}
-
 /* Estilos para el contenedor de la sección Home */
-.papa-noel-container {
+.home-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -175,36 +129,82 @@ section {
 }
 
 /* Estilos para la imagen en la sección Home */
-.papa-noel-image {
+.home-image {
     flex: 1;
     min-width: 300px;
 }
 
-.papa-noel-image img {
+.home-image img {
     width: 100%;
     height: auto;
     border-radius: 8px;
 }
 
 /* Estilos para el texto en la sección Home */
-.papa-noel-text {
+.home-text {
     flex: 2;
     min-width: 300px;
+    text-align: justify;
+}
+
+.home-text h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.home-text p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/*-----------PAPA NOEL------------PAPA NOEL-----------------PAPA NOEL------------PAPA NOEL--------------PAPA NOEL-------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------PAPA NOEL------------PAPA NOEL-----------------PAPA NOEL------------PAPA NOEL--------------PAPA NOEL-------------------*/
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------PAPA NOEL------------PAPA NOEL-----------------PAPA NOEL------------PAPA NOEL--------------PAPA NOEL-------------------*/
+
+#papa-noel {
+    background-color: #eec2b5;
+
+}
+
+/* Estilos para el contenedor de la sección Papá Noel */
+.papa-noel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Estilos para la imagen en la sección Papá Noel */
+.papa-noel-image {
+    margin-bottom: 20px;
+}
+
+.papa-noel-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    max-width: 400px; /* Limita el ancho máximo de la imagen */
+}
+
+/* Estilos para el texto en la sección Papá Noel */
+.papa-noel-text {
+    max-width: 600px;
     text-align: justify;
 }
 
 .papa-noel-text h2 {
     font-size: 2rem;
     margin-bottom: 10px;
-    text-align: justify;
 }
 
 .papa-noel-text p {
     font-size: 1rem;
     margin-bottom: 10px;
 }
-
-
 /* Estilos para los spans */
 span {
     color: #ff0033;
@@ -217,6 +217,9 @@ span {
 /*----------------------------------------------------------------------------------------------------------------------------------------------*/
 /*-----------CARTAS------------CARTAS-----------------CARTAS------------CARTAS--------------CARTAS------------------CARTAS----------------------*/
 
+#cartas {
+    background-color: #ecd3d3;
+}
 /* Estilos para el contenedor de cartas */
 /* Define el diseño de la cuadrícula y el espacio entre elementos */
 .cartas-container {
@@ -261,6 +264,7 @@ span {
 #juego {
     text-align: center;
     padding: 20px;
+    background-color: rgb(133, 199, 199);
 }
 
 #juego button {
@@ -284,7 +288,7 @@ span {
 /* Define el padding, el color de fondo, el radio del borde, la sombra, el ancho máximo y el margen */
 #contacto {
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #c5e6cf;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     max-width: 600px;
@@ -323,14 +327,4 @@ span {
     border-radius: 4px;
     cursor: pointer;
     font-size: 1rem;
-}
-
-#contacto button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
-#contacto button:active {
-    background-color: #004494;
-    transform: scale(0.95);
 }
