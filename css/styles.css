@@ -74,7 +74,7 @@ nav {
 
 /* Estilos para los botones de autenticación */
 /* Define el diseño de los botones, su color de fondo, color del texto y elimina el borde */
-.auth-buttons a {
+.auth-buttons imput {
     display: inline-block;
     padding: 10px 20px;
     margin: 5px;
@@ -89,7 +89,7 @@ nav {
 }
 
 /* Estilos para el botón de menú */
-.auth-buttons a:hover, a.auth-buttons:active {
+.auth-buttons imput:hover, imput.auth-buttons:active {
     background-color: #d35757;
     transform: scale(1.05);
 }
