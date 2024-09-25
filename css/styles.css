@@ -1,24 +1,28 @@
 /* display:flex; */
 
-.barra-nav{
+#barra-nav{
     top: 0;
     left: 0;
     position: fixed;
     display: flex;
     align-items: center;
     height: 10%;
-    background: pink;
+    background: rgb(224, 64, 91);
+    width: 100%;
     
 }
 .nav-menu{
     width: 100%;
     list-style: none;
     display: flex;
-    padding-left: 0;
+    padding-left: 500px;
 }
 .atrib-menu{
     margin: 20px 20px 20px 0;
     text-align: center;
+    text-decoration: none;
+    color: rgb(241, 241, 241);
+
 }
 .titulo{
     margin-left: 10px;
@@ -27,3 +31,69 @@
     box-sizing: border-box;
 
 }
+.auth-buttons{
+    display: flex;
+    margin-right: 10px;
+    gap: 10px;
+
+}
+
+
+#home {
+    background: #f9f9f9;
+    color: #333;
+    padding: 200px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+}
+
+
+#papa_noel {
+    padding: 50px; /* Ajustado para que no sea tan grande */
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding-top: 5%;
+}
+
+.papa-noel-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.papa-noel-image {
+    width: 40%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.papa-noel-text {
+    width: 50%;
+    height: auto;
+    text-align: right;
+    font-size: 20px;
+    text-align: justify;
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .papa-noel-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .papa-noel-image, .papa-noel-text {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .papa-noel-text {
+        text-align: center;
+    }
