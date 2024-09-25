@@ -1,4 +1,29 @@
 /* display:flex; */
-.ej{
-    width: 10%;
+
+.barra-nav{
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    height: 10%;
+    background: pink;
+    
+}
+.nav-menu{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+}
+.atrib-menu{
+    margin: 20px 20px 20px 0;
+    text-align: center;
+}
+.titulo{
+    margin-left: 10px;
+    margin-right: 0px;
+    height:auto;
+    box-sizing: border-box;
+
 }
