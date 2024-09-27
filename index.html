@@ -110,52 +110,31 @@
 
     <!-- Sección de Contacto -->
     <section id="contacto">
-        <div class="contacto-container">
-            
-            <div class="contacto-image">
-                <h2>¡Envía tu Carta a Papá Noel!</h2>
-            </div>
-            
-            <div class="contacto-text">
+        <h2>¡Envía tu Carta a Papá Noel!</h2>
+        <div class="Formulario-carta">
+            <form>
+                <input class="caja-formulario" type="text" placeholder="Nombre" required>
                 
-                <div class="Imagen-Formulario Imagen1-Formulario">
-                    <img src="imagenes/regalos.gif" alt="Regalos">
-                </div>
+                <input class="caja-formulario" type="email" placeholder="Email" required>
                 
-                <div class="Formulario-carta">
-                    <form>
-                        
-                        <input class="caja-formulario" type="text" placeholder="Nombre" required>
-                        
-                        <input class="caja-formulario" type="email" placeholder="Email" required>
-                        
-                        <input class="caja-formulario" type="text" placeholder ="Pais" required>
-                        
-                        <input class="caja-formulario" type="text" placeholder="Ciudad" required>
-                        
-                        <input class="caja-formulario texto-carta" type="text" placeholder="Escribe aquí tu carta" required></textarea>
-                        <input type="submit" value="Enviar Carta">
-                    </form>
-                </div>
+                <input class="caja-formulario" type="text" placeholder ="Pais" required>
                 
-                <div class="Imagen-Formulario Imagen2-Formulario">
-                    <img src="imagenes/regalos.gif" alt="Regalos">
-                </div>
-            </div>
-            
+                <input class="caja-formulario" type="text" placeholder="Ciudad" required>
+                
+                <input class="texto-carta" type="text" placeholder="Escribe aquí tu carta" required></textarea>
+                <input type="submit" value="Enviar Carta">
+            </form>
         </div>
     </section>
 
     <!-- Sección de Juega -->
     <section id="juega">
-        <div class="juego-container">
-            
-            <div class="Titulo-Juego">
-                <h2>Juega con Papá Noel</h2>
-                <h3>¡Diviértete con nuestros juegos!</h3>
-            </div>
         
-
+        <div class="Titulo-Juego">
+            <h2>Juega con Papá Noel</h2>
+            <h3>¡Diviértete con nuestros juegos!</h3>
+        </div>
+        <div class="juego-container">
         
             <div class="botones-juego">
                 
@@ -169,9 +148,9 @@
 
             <div class="Imagenes-Juego">
                 <img id="gameImage" src="imagenes/default.jpg" alt="Elige el juego" style="width: 300px; height: 200px;">
-                <button>Jugar</button>
+                <button id="boton-juegar">Jugar</button>
             </div>
-      
+
         </div>
     </section>
 

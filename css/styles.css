@@ -157,7 +157,7 @@
     text-align: center;
 }
 
-.cartas-título h2 {
+h2 {
     font-size: 40px;
     font-style: italic;
     color: #121331;
@@ -211,4 +211,131 @@
     }
 }
 
+/*CONTACTO------------------------------------------------------------------------------------------------------------*/
+#contacto {
+    padding: 50px;
+    background-color: #f0bbbb;
+    border-radius: 10px;
+    display: flex;
+    align-items: center; /* Centra el formulario verticalmente */
+    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+}
 
+.Formulario-carta {
+    padding: 20px;
+    flex: 1; /* Permite que el formulario ocupe el espacio disponible */
+    max-width: 600px; /* Ajusta el tamaño máximo del formulario */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caja-formulario {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.texto-carta {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/*JUEGO----------------------------------------------------------------------------------------------------------------------------*/
+
+#juega {
+    padding: 200px;
+    background-color: #e0f7fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+
+}
+
+.juego-container {
+    display: flex;
+    flex-direction: row; 
+    width: 100%;
+    max-width: 1200px;
+    gap: 100px;
+    align-content: center;
+}
+
+.Titulo-Juego {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+}
+.Titulo-Juego h2 {
+    font-size: 36px;
+    color: #00796b;
+    margin-bottom: 10px;
+}
+
+.Titulo-Juego h3 {
+    font-size: 24px;
+    color: #004d40;
+    margin-bottom: 20px;
+}
+
+.botones-juego {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1; /* Permite que la columna ocupe el espacio disponible */
+}
+
+.botones-juego button, #boton-juegar {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #00796b;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.botones-juego button:hover {
+    background-color: #004d40;
+}
+
+.Imagenes-Juego {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.Imagenes-Juego img {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    border: 2px solid #00796b;
+}
+
+
+.Imagenes-Juego button:hover {
+    background-color: #004d40;
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .botones-juego {
+        flex-direction: column;
+    }
+
+    .Imagenes-Juego img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/*PIE DE PAGINA----------------------------------------------------------------------------*/
