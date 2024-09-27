@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     height: 10%;
-    background: rgba(255, 0, 0, 0.774);
+    background: rgba(110, 108, 108, 0.493);
     width: 100%;
     
 }
@@ -40,9 +40,8 @@
 }
 .auth-buttons{
     display: flex;
-    margin-right: 10px;
+    padding-left: 10px;
     gap: 10px;
-
 }
 
 /* Ajustes para pantallas más pequeñas */
@@ -141,4 +140,75 @@
         max-width: 100%;
     }
 }
+
+#cartas {
+    background: #c5c9e7;
+    color: #333;
+    padding: 200px;
+    text-align: center;
+    font-size: 100px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.sección1-cartas {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.cartas-título h2 {
+    font-size: 40px;
+    font-style: italic;
+    color: #121331;
+}
+
+.cartas-image img {
+    width: 100px; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+}
+
+#cartas h3 {
+    font-size: 20px;
+    color: #555;
+}
+
+.sección2-cartas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /*crea tres columnas de igual tamaño.*/
+    gap: 10px; /* Espacio entre las columnas */
+}
+
+.carta {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 10px 40px 20px rgba(55, 14, 204, 0.1);
+    box-sizing: border-box;
+}
+
+.carta h4 {
+    font-size: 18px;
+    color: #333;
+}
+
+.carta p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .sección2-cartas {
+        grid-template-columns: 1fr;
+    }
+
+    .cartas-image img {
+        width: 80px; /* Ajusta el tamaño según sea necesario */
+    }
+}
+
 
