@@ -8,6 +8,8 @@
     height: 10%;
     background: rgba(190, 224, 190, 0.7); /* Fondo verde translúcido */
     width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
 }
 
 #barra-nav h2 {
@@ -30,11 +32,16 @@
     padding-left: 500px;
 }
 
-.atrib-menu {
+.atrib-menu  {
     margin: 20px 20px 20px 0;
     text-align: center;
     text-decoration: none;
-    color: #0a0101; /* Color blanco */
+    color: #0a0101; 
+    
+}
+
+.atrib-menu:hover{    /*Solo cuando pasas el ratón por encima*/
+    text-decoration: underline;
 }
 
 .titulo {
@@ -49,6 +56,16 @@
     display: flex;
     padding-left: 10px;
     gap: 10px;
+    margin-right: 100px;
+}
+
+.login-btn{
+    padding: 5px 10px;
+    border:none;
+    background-color: #004d40;
+    color: #fff;
+    cursor: pointer;
+    
 }
 
 /* Ajustes para pantallas más pequeñas */
@@ -225,22 +242,23 @@ h2 {
 
 /* Sección de Contacto */
 #contacto {
-    padding: 50px;
+    text-align: center ;
     background-color: #6da78f; 
     border-radius: 10px;
-    display: flex;
     align-items: center; /* Centra el formulario verticalmente */
     height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+    padding-top: 15%
 }
 #contacto h2 {
     color:  #c8f0e1; 
 }
 
 .Formulario-carta {
-    padding: 20px;
+    margin: 0 auto;     /* Con esto junto con el display, conseguimos que se centre*/
+    width: 50%;
     flex: 1; /* Permite que el formulario ocupe el espacio disponible */
     max-width: 600px; /* Ajusta el tamaño máximo del formulario */
-    display: flex;
+    display: block;
     flex-direction: column;
     align-items: center;
 }
@@ -249,8 +267,13 @@ h2 {
     width: 100%;
     margin-bottom: 10px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border-left: none;
+    border-bottom: 3px solid #945c70;
+    border-right: none;
+    border-top: none;
     border-radius: 5px;
+    background-color: #5c947e;
+    color: #c8f0e1;
 }
 
 .texto-carta {
@@ -258,13 +281,29 @@ h2 {
     height: 100px;
     margin-bottom: 10px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border-left: none;
+    border-bottom: 3px solid #945c70;
+    border-right: none;
+    border-top: none;
     border-radius: 5px;
+    background-color: #5c947e;
+    color: #c8f0e1;
+    
+}
+.enviar-form{
+    margin-top: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #c8f0e1;
+    background-color: #5c947e; /* Color verde oscuro */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 /* Sección de Juego */
 #juega {
-    padding: 200px;
+    padding-top: 200px ;
     background-color: #e0f7fa; /* Fondo azul claro */
     display: flex;
     flex-direction: column;
@@ -284,7 +323,6 @@ h2 {
 .Titulo-Juego {
     padding: 20px;
     text-align: center;
-    border-bottom: 1px solid #ccc;
     width: 100%;
 }
 
@@ -307,7 +345,7 @@ h2 {
     flex: 1; /* Permite que la columna ocupe el espacio disponible */
 }
 
-.botones-juego button, #boton-juegar {
+.botones-juego button, #boton-jugar {
     padding: 10px 20px;
     font-size: 16px;
     color: #fff;
@@ -352,3 +390,24 @@ h2 {
 }
 
 /* Pie de página */
+.pie-pagina {
+    display: flex;
+    background-color: #2c3e50;
+    
+}
+
+.lista-enlaces-pie{
+    list-style: none;
+    margin-left: 40% ;
+}
+
+.Enlaces-pie{
+    color: #e0f7fa;
+    text-decoration: none;
+    
+}
+.Enlaces-pie:hover{
+    
+    text-decoration: underline;
+    
+}
