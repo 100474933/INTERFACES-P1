@@ -9,19 +9,19 @@
     background: rgba(190, 224, 190, 0.7); /* Fondo verde translúcido */
     width: 100%;
     box-sizing: border-box;
-    overflow-x: auto;
+    justify-content: center;
 }
 
 #barra-nav h2 {
-    font-size: 1em; /* Ajusta el tamaño de la fuente */
     line-height: 1; /* Ajusta la altura de la línea */
     margin: 0; /* Elimina el margen */
     padding: 0 20px; /* Añade padding horizontal si es necesario */
     color:#004d40
+    
 }
 
 .nav-logo {
-    display: inline-block;
+    display: flex;
     vertical-align: middle;
 }
 
@@ -29,7 +29,7 @@
     width: 100%;
     list-style: none;
     display: flex;
-    padding-left: 500px;
+    justify-content: center;
 }
 
 .atrib-menu  {
@@ -56,7 +56,9 @@
     display: flex;
     padding-left: 10px;
     gap: 10px;
-    margin-right: 100px;
+    margin-right: 5%;
+    
+
 }
 
 .login-btn{
@@ -66,24 +68,6 @@
     color: #fff;
     cursor: pointer;
     
-}
-
-/* Ajustes para pantallas más pequeñas */
-@media (max-width: 768px) {
-    .nav-menu {
-        flex-direction: column;
-        align-items: center;
-        padding-left: 0;
-    }
-
-    .atrib-menu {
-        margin: 10px 0;
-    }
-
-    .auth-buttons {
-        margin-right: 0;
-        justify-content: center;
-    }
 }
 
 /* Sección de inicio */
@@ -158,16 +142,6 @@ h1{
     color: #d32f2f; /* Color rojo oscuro */
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-    .papa-noel-container {
-        flex-direction: column;
-    }
-
-    .papa-noel-image, .papa-noel-text {
-        max-width: 100%;
-    }
-}
 
 /* Sección de Cartas */
 #cartas {
@@ -227,17 +201,6 @@ h2 {
     margin: 5px 0;
     font-size: 14px;
     color: #666;
-}
-
-/* Ajustes para pantallas más pequeñas */
-@media (max-width: 768px) {
-    .sección2-cartas {
-        grid-template-columns: 1fr;
-    }
-
-    .cartas-image img {
-        width: 80px; /* Ajusta el tamaño según sea necesario */
-    }
 }
 
 /* Sección de Contacto */
@@ -377,18 +340,6 @@ h2 {
     background-color: #004d40; /* Color verde más oscuro */
 }
 
-/* Ajustes para pantallas más pequeñas */
-@media (max-width: 768px) {
-    .botones-juego {
-        flex-direction: column;
-    }
-
-    .Imagenes-Juego img {
-        width: 100%;
-        height: auto;
-    }
-}
-
 /* Pie de página */
 .pie-pagina {
     display: flex;
@@ -411,3 +362,99 @@ h2 {
     text-decoration: underline;
     
 }
+
+
+@media only screen and (max-width: 768px) and (min-width: 601px){
+    #barra-nav {
+        flex-direction: column; /* Alinea verticalmente los elementos */
+        height: auto;
+        justify-content: center;
+    }
+    
+    .nav-menu {
+         /* Hace que el menú se vea en una columna */
+        text-align: center;
+        margin: 1% 0 1% 0 ;
+    }
+
+    .nav-logo{
+        display: none;
+    }
+   
+    .titulo{
+        justify-content: center;
+        margin: 1% 0 1% 0;
+    
+    }
+    .auth-buttons {
+        margin: 20px 0; /* Ajusta el espaciado de los botones */
+        justify-content: center;
+        margin: 0 0 1% 0;
+    }
+    
+    .atrib-menu {
+        margin: 10px ;
+        font-size: 15px;
+    }
+
+    /* Sección de inicio */
+    #home {
+        padding: 100px 10px; /* Reduce el padding */
+        font-size: 24px;
+    }
+
+    /* Sección de Papá Noel */
+    .papa-noel-container {
+        flex-direction: column; /* Alinea las imágenes y textos en una columna */
+        gap: 20px;
+    }
+
+    .papa-noel-image img {
+        max-width: 100%;
+    }
+
+    .papa-noel-text {
+        padding: 10px;
+    }
+
+    /* Sección de Cartas */
+    .sección2-cartas {
+        grid-template-columns: 1fr 1fr; /* Dos columnas en pantallas medianas */
+    }
+
+    /* Sección de Contacto */
+    .Formulario-carta {
+        width: 80%; /* Reduce el ancho del formulario */
+    }
+
+    /* Sección de Juego */
+    .juego-container {
+        flex-direction: column; /* Los botones y la imagen se apilan en columna */
+        align-items: center;
+    }
+
+    .botones-juego {
+        flex-direction: row;
+        flex-wrap: wrap; /* Alinea los botones en fila con ajuste automático */
+        justify-content: center;
+    }
+
+    .Imagenes-Juego img {
+        width: 250px;
+        height: 150px;
+    }
+
+    /* Pie de página */
+    .pie-pagina {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lista-enlaces-pie {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+
+    
