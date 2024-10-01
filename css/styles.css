@@ -5,24 +5,24 @@
     position: fixed;
     display: flex;
     align-items: center;
-    height: 10%;
-    background: rgba(190, 224, 190, 0.7); /* Fondo verde translúcido */
+    height: 12%;
+    background: rgba(190, 224, 190, 0.7); 
     width: 100%;
     box-sizing: border-box;
     justify-content: center;
 }
 
 #barra-nav h2 {
-    line-height: 1; /* Ajusta la altura de la línea */
+    line-height: 0.8; 
     margin: 0; /* Elimina el margen */
-    padding: 0 20px; /* Añade padding horizontal si es necesario */
+    padding: 0 20px; /* Añade padding horizontal */
     color:#004d40
     
 }
 
 .nav-logo {
-    display: flex;
-    vertical-align: middle;
+    display: flex;  /*Ponemos el logo y el título en fila*/
+    
 }
 
 .nav-menu {
@@ -49,7 +49,7 @@
     margin-right: 0px;
     height: auto;
     box-sizing: border-box;
-    color: #01030f; /* Color azul claro */
+    color: #01030f; 
 }
 
 .auth-buttons {
@@ -66,14 +66,14 @@
     border:none;
     background-color: #004d40;
     color: #fff;
-    cursor: pointer;
+    cursor: pointer;    /*Cambiamos cursor al pasar por los botones de inicio sesión y registro*/
     
 }
 
 /* Sección de inicio */
 #home {
     background-color: #e0f7fa;
-    color: #00796b; /* Color verde oscuro */
+    color: #00796b; 
     padding: 200px;
     text-align: center;
     font-size: 30px;
@@ -109,10 +109,10 @@ h1{
 /* Columna Izquierda: Imagen de Papá Noel */
 .papa-noel-image img {
     width: 100%;
-    max-width: 600px;
+    max-width: 600px;       /*Para que no haya problemas a la hora de hacer la ventana más pequeña*/
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /*Da un sombreado de la imagen sobre el fondo*/
 }
 
 /* Columna Derecha: Texto sobre Papá Noel */
@@ -128,7 +128,7 @@ h1{
 .papa-noel-text h3 {
     margin-bottom: 15px;
     font-size: 1.5em;
-    color: #d32f2f; /* Color rojo oscuro */
+    color: #d32f2f; 
 }
 
 .papa-noel-text p {
@@ -139,14 +139,14 @@ h1{
 
 .papa-noel-text span {
     font-weight: bold;
-    color: #d32f2f; /* Color rojo oscuro */
+    color: #d32f2f; 
 }
 
 
 /* Sección de Cartas */
 #cartas {
     background-color: #e0f7fa;
-    color: #00796b; /* Color verde oscuro */
+    color: #00796b; 
     padding: 200px;
     text-align: center;
     font-size: 100px;
@@ -167,7 +167,7 @@ h2 {
 }
 
 .cartas-image img {
-    width: 100px; /* Ajusta el tamaño según sea necesario */
+    width: 100px; 
     height: auto;
 }
 
@@ -208,7 +208,7 @@ h2 {
     text-align: center ;
     background-color: #6da78f; 
     border-radius: 10px;
-    align-items: center; /* Centra el formulario verticalmente */
+    align-items: center; 
     height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
     padding-top: 15%
 }
@@ -219,8 +219,8 @@ h2 {
 .Formulario-carta {
     margin-left: 33%;
     width: 50%;
-    flex: 1; /* Permite que el formulario ocupe el espacio disponible */
-    max-width: 600px; /* Ajusta el tamaño máximo del formulario */
+    flex: 1; /* Para ocupar ttodo el espacio disponible del formulario */
+    max-width: 600px; 
     display: block;
     flex-direction: column;
     align-items: center;
@@ -258,10 +258,10 @@ h2 {
     padding: 10px 20px;
     font-size: 16px;
     color: #c8f0e1;
-    background-color: #5c947e; /* Color verde oscuro */
+    background-color: #5c947e; 
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s; /*Crea el efecto al pulsar el boton*/
 }
 
 .form-image {
@@ -275,16 +275,16 @@ h2 {
 /* Sección de Juego */
 #juega {
     padding-top: 200px ;
-    background-color: #e0f7fa; /* Fondo azul claro */
+    background-color: #e0f7fa; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+    min-height: 100vh; 
 }
 
 .juego-container {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row; /*Se pone en columnas*/
     width: 100%;
     max-width: 1200px;
     gap: 100px;
@@ -299,13 +299,13 @@ h2 {
 
 .Titulo-Juego h2 {
     font-size: 36px;
-    color: #00796b; /* Color verde oscuro */
+    color: #00796b; 
     margin-bottom: 10px;
 }
 
 .Titulo-Juego h3 {
     font-size: 24px;
-    color: #004d40; /* Color verde más oscuro */
+    color: #004d40; 
     margin-bottom: 20px;
 }
 
@@ -319,14 +319,14 @@ h2 {
     padding: 10px 20px;
     font-size: 100%;
     color: #fff;
-    background-color: #00796b; /* Color verde oscuro */
+    background-color: #00796b; 
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .botones-juego button:hover {
-    background-color: #004d40; /* Color verde más oscuro */
+    background-color: #004d40; 
 }
 
 .Imagenes-Juego {
@@ -338,11 +338,11 @@ h2 {
 
 .Imagenes-Juego img {
     border-radius: 10px;
-    border: 2px solid #00796b; /* Borde verde oscuro */
+    border: 2px solid #00796b; 
 }
 
 .Imagenes-Juego button:hover {
-    background-color: #004d40; /* Color verde más oscuro */
+    background-color: #004d40; 
 }
 
 /* Pie de página */
@@ -371,19 +371,18 @@ h2 {
 
 @media only screen and (max-width: 768px) and (min-width: 601px){
     #barra-nav {
-        flex-direction: column; /* Alinea verticalmente los elementos */
+        flex-direction: column; /* Cambiamos lña disposición a columnas para que quede mejor en movil y tablet */
         height: auto;
         justify-content: center;
     }
     
     .nav-menu {
-         /* Hace que el menú se vea en una columna */
         text-align: center;
         margin: 1% 0 1% 0 ;
     }
 
     .nav-logo{
-        display: none;
+        display: none; /*Quitamos el logo, que nos ha dado muchos problemas*/
     }
 
     .titulo{
@@ -392,7 +391,7 @@ h2 {
     
     }
     .auth-buttons {
-        margin: 20px 0; /* Ajusta el espaciado de los botones */
+        margin: 20px 0; 
         justify-content: center;
         margin: 0 0 1% 0;
     }
@@ -404,13 +403,13 @@ h2 {
 
     /* Sección de inicio */
     #home {
-        padding: 100px 10px; /* Reduce el padding */
+        padding: 100px 10px; 
         font-size: 24px;
     }
 
     /* Sección de Papá Noel */
     .papa-noel-container {
-        flex-direction: column; /* Alinea las imágenes y textos en una columna */
+        flex-direction: column; /* Dispone en columna las imágenes y textos */
         gap: 20px;
     }
 
@@ -424,23 +423,23 @@ h2 {
 
     /* Sección de Cartas */
     .sección2-cartas {
-        grid-template-columns: 1fr 1fr; /* Dos columnas en pantallas medianas */
+        grid-template-columns: 1fr 1fr; /* Dos columnas */
     }
 
     /* Sección de Contacto */
     .Formulario-carta {
-        width: 80%; /* Reduce el ancho del formulario */
+        width: 80%; 
     }
 
     /* Sección de Juego */
     .juego-container {
-        flex-direction: column; /* Los botones y la imagen se apilan en columna */
+        flex-direction: column; 
         align-items: center;
     }
 
     .botones-juego {
         flex-direction: row;
-        flex-wrap: wrap; /* Alinea los botones en fila con ajuste automático */
+        flex-wrap: wrap; /* Alinea los botones en fila */
         justify-content: center;
     }
 
@@ -471,13 +470,13 @@ h2 {
 
     /* Barra de navegación */
     #barra-nav {
-        flex-direction: column; /* Alinea verticalmente los elementos */
+        flex-direction: column; 
         height: auto;
         padding: 10px;
     }
     
     .nav-logo {
-        display: none; /* Oculta el logo en pantallas pequeñas */
+        display: none; 
     }
 
     .titulo {
@@ -508,7 +507,7 @@ h2 {
 
     /* Sección de inicio */
     #home {
-        padding: 50px 10px; /* Reduce el padding */
+        padding: 50px 10px; 
         font-size: 20px;
     }
 
@@ -529,7 +528,8 @@ h2 {
 
     /* Sección de Cartas */
     .sección2-cartas {
-        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+        display:grid;               
+        grid-template-columns: 1fr; /* Una columna */
         gap: 20px;
     }
 
@@ -539,19 +539,19 @@ h2 {
 
     /* Sección de Contacto */
     .Formulario-carta {
-        width: 90%; /* Más pequeño en pantallas pequeñas */
+        width: 90%; 
         margin-left: 5%;
         margin-right: auto;
     }
 
     /* Sección de Juego */
     .juego-container {
-        flex-direction: column; /* Alinea los botones y la imagen en columna */
+        flex-direction: column; 
         align-items: center;
     }
 
     .botones-juego {
-        flex-direction: column; /* Los botones de los juegos se alinean en columna */
+        flex-direction: column; 
         gap: 10px;
         justify-content: center;
         width: 100%;
