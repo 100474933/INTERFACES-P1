@@ -1,5 +1,5 @@
 
-    
+
     function updateCountdown() {
         const now = new Date();
         const eventDate = new Date(now.getFullYear(), 11, 24, 23, 59, 59); // 24 de diciembre a las 23:59
@@ -131,13 +131,15 @@
         startGame(level);
     }
 
+    let gameInterval;
+
     function startGame(level) {
-        score = 0;
-        timeRemaining = 90; // 1:30 en segundos
+        let score = 0;
+        let timeRemaining = 90; // 1:30 en segundos
         document.getElementById(`score${level}`).textContent = score;
         document.getElementById(`timer${level}`).textContent = '1:30';
         document.getElementById(`gameOver${level}`).style.display = 'none';
-        gameInterval = setInterval(() => updateTimer(level), 1000);
+        gameInterval = setInterval(() => updateTimer(level, score, timeRemaining, gameInterval), 1000);
         moveSantaFace(level);
     }
 
@@ -146,11 +148,7 @@
         startGame(level);
     }
 
-    let score = 0;
-    let timeRemaining = 90; // 1:30 en segundos
-    let gameInterval;
-
-    function updateTimer(level) {
+    function updateTimer(level, score, timeRemaining, gameInterval) {
         if (timeRemaining > 0) {
             timeRemaining--;
             const minutes = Math.floor(timeRemaining / 60);
@@ -162,3 +160,5 @@
             document.getElementById(`finalScore${level}`).textContent = score;
         }
     }
+
+
