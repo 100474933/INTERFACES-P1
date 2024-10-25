@@ -70,6 +70,46 @@
     
 }
 
+
+/*formulario pop-up*/
+.form-popup{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    background-color: #00796bce; 
+}
+.form-popup h2{
+    color: #fff;
+    text-align: center;
+    box-shadow: #004d40;
+}
+.formulario {
+    background-color: #e0f7fa;
+    padding: 20px 20px;
+}
+
+.formulario-input{
+    padding : 10px;
+    width: 90%;
+}
+
+.login-btn, .register-btn, .cancel-btn, .clear-btn{
+    letter-spacing: 20%;
+    text-transform: uppercase;
+    margin: 5% 0 5% 0;
+
+}
+
+
+
 /* Sección de inicio */
 #home {
     background-color: #e0f7fa;
@@ -344,6 +384,118 @@ h2 {
 .Imagenes-Juego button:hover {
     background-color: #004d40; 
 }
+
+
+
+
+
+
+
+/* Contenedor del juego */
+.game-container {
+    display: none; /* Oculto por defecto */
+    background-color: #f9f9f9; /* Fondo claro */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Título del juego */
+.game-container h1 {
+    font-size: 24px;
+    color: #00796b; /* Color verde oscuro */
+    margin-bottom: 10px;
+}
+
+/* Texto del juego */
+.game-container .text {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Área del juego */
+#gameArea1, #gameArea2, #gameArea3 {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: #e0f7fa; /* Fondo azul claro */
+    border: 2px solid #00796b; /* Borde verde oscuro */
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+/* Imagen de Papá Noel */
+.CARAPAPANOEL1 {
+    position: absolute;
+    width: 35%;
+    height: 25%;
+    animation: bounce-slow 2s infinite;
+}
+
+@keyframes bounce-slow {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(200%);
+    }
+}
+.CARAPAPANOEL2 {
+    position: absolute;
+    width: 35%; 
+    height: 25%;
+    animation: bounce-medium 2s infinite;
+}
+
+
+@keyframes bounce-medium {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(300%);
+    }
+    75% {
+        transform: translateY(100%);
+    }
+    75% {
+        transform: translateX(-100%);
+    }
+}
+
+.CARAPAPANOEL3 {
+    position: absolute;
+    width: 35%; 
+    height: 25%;
+    animation: bounce-rapido 2s infinite;
+}
+
+@keyframes bounce-rapido {
+    100%, 100% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(100%);
+    }
+    20% {
+        transform: translateX(-200%);
+    }
+    50% {
+        transform: translateY(300%);
+}
+}
+
+
+/* Área de fin del juego */
+#gameOver1, #gameOver2, #gameOver3 {
+    display: none; /* Oculto por defecto */
+    margin-top: 20px;
+}
+
 
 /* Pie de página */
 .pie-pagina {

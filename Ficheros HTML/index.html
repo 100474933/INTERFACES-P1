@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mundo de Papá Noel</title>
-    <link rel="stylesheet" href="style/styles.css"> <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="../style/styles.css"> <!-- Enlace al archivo CSS -->
+    <script src="../scripts/script.js"></script> <!-- Enlace al archivo JavaScript -->
 </head>
 <body>
     <!-- Barra de Navegación -->
     <section id="barra-nav">
         <div class="nav-logo">
-            <img src="images/logo papa noels.png" alt="Logo Papá Noel" class="logo-barra" style="height: 70px; width: 70px;">
+            <img src="../images/logo papa noels.png" alt="Logo Papá Noel" class="logo-barra" style="height: 70px; width: 70px;">
         </div>
         
         <h2 class="titulo">Mundo de Papá Noel</h2> 
@@ -22,22 +23,63 @@
             <li><a class="atrib-menu" href="#juega">JUEGA</a></li>
         </ul>
         <div class="auth-buttons">
-            <input  type="button" class="login-btn" value="Iniciar Sesión" >
-            <input  type="button"  class="login-btn" value= "Registrarse">
+            <button  class="login-btn" onclick="openLoginForm()">Iniciar sesión</button>
+            <button  class="register-btn" onclick="openRegisterForm()">Registrarse</button>
         </div>
     </section>
+
+    <!-- Formulario de inicio de sesión -->
+    <div id="login-form" class="form-popup">
+        <div class="form-container">
+            <button class="close-btn" onclick="closeLoginForm()">&times;</button>
+            <h2>Iniciar sesión</h2>
+            <input class="formulario-input" type="text" id="login-username" placeholder="Nombre de usuario" required>
+            <input class="formulario-input" type="password" id="login-password" placeholder="Contraseña" required>
+            <button class="login-btn" onclick="login()">Entrar</button>
+            <button class="cancel-btn" onclick="closeLoginForm()">Cancelar</button>
+        </div>
+    </div>
     
+    <!-- Formulario de registro -->
+    <div id="register-form" class="form-popup">
+        <div class="form-container">
+            <button class="close-btn" onclick="closeRegisterForm()">&times;</button>
+            <h2>Registro</h2>
+            <input class="formulario-input" type="text" id="register-username" minlength="3" placeholder="Nombre de usuario" required>
+            <input class="formulario-input" type="password" id="register-password" minlength="12" placeholder="Contraseña" required
+                   pattern="(?=.*\d{2})(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])">
+            <input class="formulario-input" type="password" id="register-repeat-password" placeholder="Repetir contraseña" required>
+            <input class="formulario-input" type="email" id="register-email" placeholder="Correo electrónico" required>
+            <input class="formulario-input" type="text" id="register-city" minlength="3" placeholder="Ciudad" required>
+            <input class="formulario-input" type="text" id="register-country" minlength="3" placeholder="País" required>
+            <select class="formulario-input" id="register-gender">
+                <option value="" disabled selected>Género</option>
+                <option value="male">Masculino</option>
+                <option value="female">Femenino</option>
+                <option value="other">Otro</option>
+                <option value="prefer-not-to-say">Prefiero no decirlo</option>
+            </select>
+            <input class="formulario-input" type="number" id="register-children" min="0" placeholder="Número de hijos/hijas">
+            <div id="children-details"></div>
+            <button class="register-btn" onclick="register()">Aceptar</button>
+            <button class="cancel-btn" onclick="closeRegisterForm()">Cancelar</button>
+            <button class="clear-btn" onclick="clearRegisterForm()">Limpiar campos</button>
+        </div>
+    </div>
+
     <!-- Sección de Home -->
     <section id="home">
         <h1>Conoce a Papá Noel</h1>
         <div class="home-container">
             <div class="home-image">
-                <img src="images/papa noel esquiando.gif" alt="Papá Noel esquiando">
+                <img src="../images/papa noel esquiando.gif" alt="Papá Noel esquiando">
             </div>
             <div class="countdown">
                 <h3>Días restantes para Navidad:</h3>
-                <p> 97 Días 13 Horas y 25 Segundos</p>
-                
+                <span id="days"></span> días 
+                <span id="hours"></span> horas 
+                <span id="minutes"></span> minutos 
+                <span id="seconds"></span> segundos
             </div>
         </div>
     </section>
@@ -47,7 +89,7 @@
         <h2>Papá Noel</h2>
         <div class="papa-noel-container">
             <div class="papa-noel-image">
-                <img src="images/path_to_your_image2.jpg" alt="Papá Noel" style="width: 700px; height: 700px">
+                <img src="../images/path_to_your_image2.jpg" alt="Papá Noel" style="width: 700px; height: 700px">
             </div>
             
             <div class="papa-noel-text">
@@ -70,7 +112,7 @@
                 <h2>Las Cartas</h2>
             </div>
             <div class="cartas-image">
-                <img src="images/papa_noel_leyendo_carta.png" alt="Papá Noel">
+                <img src="../images/papa_noel_leyendo_carta.png" alt="Papá Noel">
             </div>
 
         </div>
@@ -128,35 +170,90 @@
                 </form>
             </div>
             <div class="form-image"></div>
-                <img class= "papanoelcartaesquina" src="images/papanoelfelizcartas.png" alt="Papá Noel">
+                <img class= "papanoelcartaesquina" src="../images/papanoelfelizcartas.png" alt="Papá Noel">
             </div>
         </div>
     </section>
 
     <!-- Sección de Juega -->
+
     <section id="juega">
-        
         <div class="Titulo-Juego">
             <h2>Juega con Papá Noel</h2>
             <h3>¡Diviértete con nuestros juegos!</h3>
         </div>
         <div class="juego-container">
-        
             <div class="botones-juego">
-                
-                <button onclick="document.getElementById('gameImage').src='images/videojuego1.png'">JUEGO1</button>
-                
-                <button onclick="document.getElementById('gameImage').src='images/videojuego2.png'">JUEGO2</button>
-                
-                <button onclick="document.getElementById('gameImage').src='images/videojuego3.png'">JUEGO3</button>
-                
+                <button onclick="showGame(1)">JUEGO1</button>
+                <button onclick="showGame(2)">JUEGO2</button>
+                <button onclick="showGame(3)">JUEGO3</button>
+            </div>
+            
+            <div id="game1" class="game-container">
+                <div class="text-center">
+                    <h1>Click Santa's Face Game - Nivel 1</h1>
+                    <div class="text">Time Remaining: <span id="timer1" class="font-bold">1:30</span></div>
+                    <div class="text">Score: <span id="score1" class="font-bold">0</span></div>
+                </div>
+            
+                <div id="gameArea1">
+                    <div id="santaFace1" class="" role="img">
+                        <img src="../images/papa_noel_CARA_JUEGO.png" alt="Papá Noel Cara Juego" class="CARAPAPANOEL1">
+                    </div>
+                </div>
+            
+                <div id="gameOver1">
+                    <div>
+                        <h2>Game Over!</h2>
+                        <p>Final Score: <span id="finalScore1">0</span></p>
+                        <button onclick="restartGame(1)">Play Again</button>
+                    </div>
+                </div>
             </div>
 
-            <div class="images-Juego">
-                <img id="gameImage" src="images/choosethegame.jpg" alt="Elige el juego" style="width: 70%; height: 70%;">
-                <button id="boton-jugar">Jugar</button>
+            <div id="game2" class="game-container">
+                <div class="text-center">
+                    <h1>Click Santa's Face Game - Nivel 2</h1>
+                    <div class="text">Time Remaining: <span id="timer2" class="font-bold">1:30</span></div>
+                    <div class="text">Score: <span id="score2" class="font-bold">0</span></div>
+                </div>
+            
+                <div id="gameArea2">
+                    <div id="santaFace2" class="" role="img">
+                        <img src="../images/papa_noel_CARA_JUEGO.png" alt="Papá Noel Cara Juego" class="CARAPAPANOEL2">
+                    </div>
+                </div>
+            
+                <div id="gameOver2">
+                    <div>
+                        <h2>Game Over!</h2>
+                        <p>Final Score: <span id="finalScore2">0</span></p>
+                        <button onclick="restartGame(2)">Play Again</button>
+                    </div>
+                </div>
             </div>
 
+            <div id="game3" class="game-container">
+                <div class="text-center">
+                    <h1>Click Santa's Face Game - Nivel 3</h1>
+                    <div class="text">Time Remaining: <span id="timer3" class="font-bold">1:30</span></div>
+                    <div class="text">Score: <span id="score3" class="font-bold">0</span></div>
+                </div>
+            
+                <div id="gameArea3">
+                    <div id="santaFace3" class="" role="img">
+                        <img src="../images/papa_noel_CARA_JUEGO.png" alt="Papá Noel Cara Juego" class="CARAPAPANOEL3">
+                    </div>
+                </div>
+            
+                <div id="gameOver3">
+                    <div>
+                        <h2>Game Over!</h2>
+                        <p>Final Score: <span id="finalScore3">0</span></p>
+                        <button onclick="restartGame(3)">Play Again</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -171,7 +268,6 @@
         </div>
 
     </section>
-
-
+    
 </body>
 </html>
