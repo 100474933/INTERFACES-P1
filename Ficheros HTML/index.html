@@ -25,8 +25,51 @@
             <input  type="button" class="login-btn" value="Iniciar Sesión" >
             <input  type="button"  class="login-btn" value= "Registrarse">
         </div>
+        
+        <div class="user-menu hidden">
+            <img src="../images/icono_perfil.png" alt="Perfil" onclick="toggleUserMenu()">
+            <div id="user-dropdown" class="profile-options">
+                <li><a href="#mi-perfil">Mi perfil</a></li>
+                <li><a href="#mis-cartas">Mis cartas</a></li>
+                <li><a href="#" onclick="logout()">Cerrar sesión</a></li>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        
     </section>
     
+<<<<<<< HEAD
+=======
+    <!-- Formulario de registro -->
+    <div id="register-form" class="form-popup">
+        <div class="form-container">
+            <button class="close-btn" onclick="closeRegisterForm()">&times;</button>
+            <h2>Registro</h2>
+            <input class="formulario-input" type="text" id="register-username" minlength="3" placeholder="Nombre de usuario" required>
+            <input class="formulario-input" type="password" id="register-password" minlength="12" placeholder="Contraseña" required
+                   pattern="(?=.*\d{2})(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])">
+            <input class="formulario-input" type="password" id="register-repeat-password" placeholder="Repetir contraseña" required>
+            <input class="formulario-input" type="email" id="register-email" placeholder="Correo electrónico" required>
+            <input class="formulario-input" type="text" id="register-city" minlength="3" placeholder="Ciudad" required>
+            <input class="formulario-input" type="text" id="register-country" minlength="3" placeholder="País" required>
+            <select class="formulario-input" id="register-gender">
+                <option value="" disabled selected>Género</option>
+                <option value="male">Masculino</option>
+                <option value="female">Femenino</option>
+                <option value="other">Otro</option>
+                <option value="prefer-not-to-say">Prefiero no decirlo</option>
+            </select>
+            <input class="formulario-input" type="number" id="register-children" min="0" placeholder="Número de hijos/hijas">
+            <div id="children-details"></div>
+            <button class="register-btn" onclick="register()">Aceptar</button>
+            <button class="cancel-btn" onclick="closeRegisterForm()">Cancelar</button>
+            <button class="clear-btn" onclick="clearRegisterForm()">Limpiar campos</button>
+        </div>
+    </div>
+    
+>>>>>>> maria
     <!-- Sección de Home -->
     <section id="home">
         <h1>Conoce a Papá Noel</h1>
