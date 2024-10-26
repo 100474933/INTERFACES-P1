@@ -27,12 +27,51 @@
             <button  class="register-btn" onclick="openRegisterForm()">Registrarse</button>
         </div>
         
-        <div class="user-menu hidden">
+        <div class="user-menu">
             <img src="../images/icono_perfil.png" alt="Perfil" onclick="toggleUserMenu()">
-            <div id="user-dropdown" class="profile-options">
-                <li><a href="#mi-perfil">Mi perfil</a></li>
-                <li><a href="#mis-cartas">Mis cartas</a></li>
+            <div id="profile-options" class="profile-options">
+                <li><a href="#" onclick="openProfile()">Mi perfil</a></li>
+                <li><a href="#"onclick="openLetters()">Mis cartas</a></li>
                 <li><a href="#" onclick="logout()">Cerrar sesión</a></li>
+            </div>
+        </div>
+        <!-- Menú de usuario -->
+        <div id="MyProfile" class="MyProfile">
+            <div class="MyProfile-content">
+                <span class="close" onclick="closeProfile()">&times;</span>
+                <h2>Editar Perfil</h2>
+                <form>
+                    <label for="username">Nombre de usuario:</label>
+                    <input type="text" id="username" name="username" value="Nombre de usuario actual">
+        
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" value="correo@ejemplo.com">
+                    
+                    <button type="submit">Guardar cambios</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Menú de mis cartas -->
+        <div id="MyProfileletters" class="MyProfileletters">
+            <div class="MyProfileletters-content">
+                <span class="close" onclick="closeLetters()">&times;</span>
+                <h2>Mis Cartas</h2>
+                <div id="MyProfileletters-Container">
+                    <div class="letter">
+                        <h4>Anastasia Fernández</h4>
+                        <p>Pamplona, 8 años</p>
+                        <p>Querido Papá Noel, este año me he portado muy bien y me gustaría recibir un coche de juguete.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Confirmación de cierre de sesión -->
+        <div id="MyProfilelogoutConfirmation" class="MyProfilelogoutConfirmation">
+            <div class="MyProfilelogoutConfirmation-content">
+                <h2>¿Estás seguro de que quieres cerrar sesión?</h2>
+                <button onclick="confirmLogout()">Sí</button>
+                <button onclick="closeLogoutConfirmation()">No</button>
             </div>
         </div>
     </section>
@@ -210,7 +249,7 @@
                 </div>
             
                 <div id="gameArea1">
-                    <div id="santaFace1" class="" role="img">
+                    <div id="santaFace1" class="santa-face">
                         <img src="../images/papa_noel_CARA_JUEGO.png" alt="Papá Noel Cara Juego" class="CARAPAPANOEL1">
                     </div>
                 </div>
@@ -232,7 +271,7 @@
                 </div>
             
                 <div id="gameArea2">
-                    <div id="santaFace2" class="" role="img">
+                    <div id="santaFace2" class="" >
                         <img src="../images/papa_noel_CARA_JUEGO.png" alt="Papá Noel Cara Juego" class="CARAPAPANOEL2">
                     </div>
                 </div>
@@ -254,7 +293,7 @@
                 </div>
             
                 <div id="gameArea3">
-                    <div id="santaFace3" class="" role="img">
+                    <div id="santaFace3" class="">
                         <img src="../images/papa_noel_CARA_JUEGO.png" alt="Papá Noel Cara Juego" class="CARAPAPANOEL3">
                     </div>
                 </div>
