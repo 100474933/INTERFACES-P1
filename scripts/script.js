@@ -1,164 +1,173 @@
+// Countdown to December 24th at 23:59
+function updateCountdown() {
+    const now = new Date();
+    const eventDate = new Date(now.getFullYear(), 11, 24, 23, 59, 59);
 
-
-    function updateCountdown() {
-        const now = new Date();
-        const eventDate = new Date(now.getFullYear(), 11, 24, 23, 59, 59); // 24 de diciembre a las 23:59
-
-        if (now.getMonth() === 11 && now.getDate() > 24) {
-            eventDate.setFullYear(eventDate.getFullYear() + 1); // Si ya pasó el 24 de diciembre, cuenta para el próximo año
-        }
-
-        const currentTime = now.getTime();
-        const eventTime = eventDate.getTime();
-        const remainingTime = eventTime - currentTime;
-
-        const seconds = Math.floor(remainingTime / 1000);
-        const minutes = Math.floor(seconds / 60);
-        const hours = Math.floor(minutes / 60);
-        const days = Math.floor(hours / 24);
-
-        const remHours = hours % 24;
-        const remMinutes = minutes % 60;
-        const remSeconds = seconds % 60;
-
-        document.getElementById('days').textContent = days;
-        document.getElementById('hours').textContent = remHours;
-        document.getElementById('minutes').textContent = remMinutes;
-        document.getElementById('seconds').textContent = remSeconds;
+    if (now.getMonth() === 11 && now.getDate() > 24) {
+        eventDate.setFullYear(eventDate.getFullYear() + 1);
     }
 
-    setInterval(updateCountdown, 1000); // Actualiza el contador cada segundo
+    const remainingTime = eventDate - now;
+    const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
-    // JavaScript para los formularios
-    function openLoginForm() {
-        document.getElementById('login-form').style.display = 'flex';
+    document.getElementById('days').textContent = days;
+    document.getElementById('hours').textContent = hours;
+    document.getElementById('minutes').textContent = minutes;
+    document.getElementById('seconds').textContent = seconds;
+}
+
+setInterval(updateCountdown, 1000);
+
+// Display and hide forms
+function openLoginForm() {
+    document.getElementById('login-form').style.display = 'flex';
+}
+
+function closeLoginForm() {
+    document.getElementById('login-form').style.display = 'none';
+}
+
+function openRegisterForm() {
+    document.getElementById('register-form').style.display = 'flex';
+}
+
+function closeRegisterForm() {
+    document.getElementById('register-form').style.display = 'none';
+}
+
+// Clear registration form
+function clearRegisterForm() {
+    if (confirm('¿Estás seguro de que quieres limpiar todos los campos?')) {
+        document.getElementById('register-form').reset();
+        document.getElementById('children-details').innerHTML = '';
     }
+}
 
-    function closeLoginForm() {
-        document.getElementById('login-form').style.display = 'none';
+// Login validation
+function login() {
+    const username = document.getElementById('login-username').value;
+    const password = document.getElementById('login-password').value;
+    const userData = JSON.parse(localStorage.getItem('userData'));
+
+    if (userData && userData.username === username && userData.password === password) {
+        alert('Inicio de sesión exitoso.');
+        document.querySelector(".auth-buttons").classList.add("hidden");
+        document.querySelector(".user-menu").classList.remove("hidden");
+        closeLoginForm();
+
+    } else {
+        alert('Nombre de usuario o contraseña incorrectos.');
     }
+}
 
-    function openRegisterForm() {
-        document.getElementById('register-form').style.display = 'flex';
-    }
+function logout() {
+    // Oculta el icono del perfil y vuelve a mostrar los botones de autenticación
+    document.querySelector(".auth-buttons").classList.remove("hidden");
+    document.querySelector(".user-menu").classList.add("hidden");
+    closeProfileMenu();
+}
 
-    function closeRegisterForm() {
-        document.getElementById('register-form').style.display = 'none';
-    }
+function toggleUserMenu() {
+    document.getElementById("user-dropdown").classList.toggle("hidden");
+}
 
-    function clearRegisterForm() {
-        if (confirm('¿Estás seguro de que quieres limpiar todos los campos?')) {
-            document.getElementById('register-username').value = '';
-            document.getElementById('register-password').value = '';
-            document.getElementById('register-repeat-password').value = '';
-            document.getElementById('register-email').value = '';
-            document.getElementById('register-city').value = '';
-            document.getElementById('register-country').value = '';
-            document.getElementById('register-gender').selectedIndex = 0;
-            document.getElementById('register-children').value = '';
-            document.getElementById('children-details').innerHTML = '';
-        }
-    }
+function closeProfileMenu() {
+    document.querySelector('.profile-options').style.display = 'none';
+}
 
-    function register() {
-        const username = document.getElementById('register-username').value;
-        const password = document.getElementById('register-password').value;
-        const repeatPassword = document.getElementById('register-repeat-password').value;
-        const email = document.getElementById('register-email').value;
-        const city = document.getElementById('register-city').value;
-        const country = document.getElementById('register-country').value;
-        const gender = document.getElementById('register-gender').value;
-        const children = document.getElementById('register-children').value;
+// Game functions
+let gameInterval;
+let scores = {};  // Keep track of scores by level
 
-        if (password !== repeatPassword) {
-            alert('Las contraseñas no coinciden.');
-            return;
-        }
+function showGame(level) {
+    document.getElementById(`game${level}`).style.display = 'block';
+    startGame(level);
+}
 
-        const userData = {
-            username,
-            password,
-            email,
-            city,
-            country,
-            gender,
-            children: []
-        };
+function startGame(level) {
+    scores[level] = 0;  // Initialize score for the level
+    let timeRemaining = 90;
+    document.getElementById(`score${level}`).textContent = scores[level];
+    document.getElementById(`timer${level}`).textContent = '1:30';
+    document.getElementById(`gameOver${level}`).style.display = 'none';
 
-        if (children > 0) {
-            for (let i = 0; i < children; i++) {
-                const childName = document.getElementById(`child-name-${i}`).value;
-                const childAge = document.getElementById(`child-age-${i}`).value;
-                const childToys = document.getElementById(`child-toys-${i}`).value;
-                userData.children.push({ name: childName, age: childAge, toys: childToys });
-            }
-        }
+    gameInterval = setInterval(() => {
+        timeRemaining--;
+        const minutes = Math.floor(timeRemaining / 60);
+        const seconds = timeRemaining % 60;
+        document.getElementById(`timer${level}`).textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 
-        localStorage.setItem('userData', JSON.stringify(userData));
-        alert('Registro exitoso.');
-        closeRegisterForm();
-    }
-
-    document.getElementById('register-children').addEventListener('input', function () {
-        const childrenCount = this.value;
-        const childrenDetails = document.getElementById('children-details');
-        childrenDetails.innerHTML = '';
-
-        for (let i = 0; i < childrenCount; i++) {
-            childrenDetails.innerHTML += `
-                <input class="formulario-input" type="text" id="child-name-${i}" minlength="3" placeholder="Nombre del hijo/hija ${i + 1}" required>
-                <input class="formulario-input" type="number" id="child-age-${i}" min="0" placeholder="Edad del hijo/hija ${i + 1}" required>
-                <input class="formulario-input" type="text" id="child-toys-${i}" placeholder="Juguetes favoritos del hijo/hija ${i + 1}" required>
-            `;
-        }
-    });
-
-    function login() {
-        const username = document.getElementById('login-username').value;
-        const password = document.getElementById('login-password').value;
-        const userData = JSON.parse(localStorage.getItem('userData'));
-
-        if (userData && userData.username === username && userData.password === password) {
-            alert('Inicio de sesión exitoso.');
-            closeLoginForm();
-        } else {
-            alert('Nombre de usuario o contraseña incorrectos.');
-        }
-    }
-
-    function showGame(level) {
-        document.getElementById(`game${level}`).style.display = 'block';
-        startGame(level);
-    }
-
-    let gameInterval;
-
-    function startGame(level) {
-        let score = 0;
-        let timeRemaining = 90; // 1:30 en segundos
-        document.getElementById(`score${level}`).textContent = score;
-        document.getElementById(`timer${level}`).textContent = '1:30';
-        document.getElementById(`gameOver${level}`).style.display = 'none';
-        gameInterval = setInterval(() => updateTimer(level, score, timeRemaining, gameInterval), 1000);
-        moveSantaFace(level);
-    }
-
-    function restartGame(level) {
-        clearInterval(gameInterval);
-        startGame(level);
-    }
-
-    function updateTimer(level, score, timeRemaining, gameInterval) {
-        if (timeRemaining > 0) {
-            timeRemaining--;
-            const minutes = Math.floor(timeRemaining / 60);
-            const seconds = timeRemaining % 60;
-            document.getElementById(`timer${level}`).textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-        } else {
+        if (timeRemaining <= 0) {
             clearInterval(gameInterval);
             document.getElementById(`gameOver${level}`).style.display = 'block';
-            document.getElementById(`finalScore${level}`).textContent = score;
+            document.getElementById(`finalScore${level}`).textContent = scores[level];
         }
+    }, 1000);
+
+    moveSantaFace(level);
+}
+
+function incrementScore(level) {
+    scores[level] = scores[level] + 1;  // Update score for the specific level
+    document.getElementById(`score${level}`).textContent = scores[level];
+    moveSantaFace(level);
+}
+
+document.getElementById('santaFace1').addEventListener('click', () => incrementScore(1));
+
+// Handle children fields in registration form
+document.getElementById('register-children').addEventListener('input', function () {
+    const childrenCount = parseInt(this.value, 10);
+    const childrenDetails = document.getElementById('children-details');
+    childrenDetails.innerHTML = '';
+
+    for (let i = 0; i < childrenCount; i++) {
+        childrenDetails.innerHTML += `
+            <div class="child-info">
+                <input type="text" id="child-name-${i}" placeholder="Nombre del hijo/hija ${i + 1}" required>
+                <input type="number" id="child-age-${i}" min="0" placeholder="Edad del hijo/hija ${i + 1}" required>
+                <input type="text" id="child-toys-${i}" placeholder="Juguetes favoritos del hijo/hija ${i + 1}" required>
+            </div>
+        `;
+    }
+});
+
+function register() {
+    const username = document.getElementById('register-username').value;
+    const password = document.getElementById('register-password').value;
+    const repeatPassword = document.getElementById('register-repeat-password').value;
+    const email = document.getElementById('register-email').value;
+    const city = document.getElementById('register-city').value;
+    const country = document.getElementById('register-country').value;
+    const gender = document.getElementById('register-gender').value;
+    const childrenCount = parseInt(document.getElementById('register-children').value, 10);
+
+    if (password !== repeatPassword) {
+        alert('Las contraseñas no coinciden.');
+        return;
     }
 
+    const userData = {
+        username,
+        password,
+        email,
+        city,
+        country,
+        gender,
+        children: []
+    };
 
+    for (let i = 0; i < childrenCount; i++) {
+        const childName = document.getElementById(`child-name-${i}`).value;
+        const childAge = parseInt(document.getElementById(`child-age-${i}`).value, 10);
+        const childToys = document.getElementById(`child-toys-${i}`).value;
+        userData.children.push({ name: childName, age: childAge, toys: childToys });
+    }
+
+    localStorage.setItem('userData', JSON.stringify(userData));
+    alert('Registro exitoso.');
+    closeRegisterForm();
+}

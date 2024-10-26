@@ -26,6 +26,15 @@
             <button  class="login-btn" onclick="openLoginForm()">Iniciar sesión</button>
             <button  class="register-btn" onclick="openRegisterForm()">Registrarse</button>
         </div>
+        
+        <div class="user-menu hidden">
+            <img src="../images/icono_perfil.png" alt="Perfil" onclick="toggleUserMenu()">
+            <div id="user-dropdown" class="profile-options">
+                <a href="#mi-perfil">Mi perfil</a>
+                <a href="#mis-cartas">Mis cartas</a>
+                <a href="#" onclick="logout()">Cerrar sesión</a>
+            </div>
+        </div>
     </section>
 
     <!-- Formulario de inicio de sesión -->
@@ -66,7 +75,7 @@
             <button class="clear-btn" onclick="clearRegisterForm()">Limpiar campos</button>
         </div>
     </div>
-
+    
     <!-- Sección de Home -->
     <section id="home">
         <h1>Conoce a Papá Noel</h1>
