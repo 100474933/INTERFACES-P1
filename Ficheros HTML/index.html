@@ -26,12 +26,51 @@
             <input  type="button"  class="login-btn" value= "Registrarse">
         </div>
         
-        <div class="user-menu hidden">
+        <div class="user-menu">
             <img src="../images/icono_perfil.png" alt="Perfil" onclick="toggleUserMenu()">
-            <div id="user-dropdown" class="profile-options">
-                <li><a href="#mi-perfil">Mi perfil</a></li>
-                <li><a href="#mis-cartas">Mis cartas</a></li>
+            <div id="profile-options" class="profile-options">
+                <li><a href="#" onclick="openProfile()">Mi perfil</a></li>
+                <li><a href="#"onclick="openLetters()">Mis cartas</a></li>
                 <li><a href="#" onclick="logout()">Cerrar sesión</a></li>
+            </div>
+        </div>
+        <!-- Menú de usuario -->
+        <div id="MyProfile" class="MyProfile">
+            <div class="MyProfile-content">
+                <span class="close" onclick="closeProfile()">&times;</span>
+                <h2>Editar Perfil</h2>
+                <form>
+                    <label for="username">Nombre de usuario:</label>
+                    <input type="text" id="username" name="username" value="Nombre de usuario actual">
+        
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" value="correo@ejemplo.com">
+                    
+                    <button type="submit">Guardar cambios</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Menú de mis cartas -->
+        <div id="MyProfileletters" class="MyProfileletters">
+            <div class="MyProfileletters-content">
+                <span class="close" onclick="closeLetters()">&times;</span>
+                <h2>Mis Cartas</h2>
+                <div id="MyProfileletters-Container">
+                    <div class="letter">
+                        <h4>Anastasia Fernández</h4>
+                        <p>Pamplona, 8 años</p>
+                        <p>Querido Papá Noel, este año me he portado muy bien y me gustaría recibir un coche de juguete.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Confirmación de cierre de sesión -->
+        <div id="MyProfilelogoutConfirmation" class="MyProfilelogoutConfirmation">
+            <div class="MyProfilelogoutConfirmation-content">
+                <h2>¿Estás seguro de que quieres cerrar sesión?</h2>
+                <button onclick="confirmLogout()">Sí</button>
+                <button onclick="closeLogoutConfirmation()">No</button>
             </div>
         </div>
     </section>
@@ -183,20 +222,76 @@
         <div class="juego-container">
         
             <div class="botones-juego">
-                
-                <button onclick="document.getElementById('gameImage').src='images/videojuego1.png'">JUEGO1</button>
-                
-                <button onclick="document.getElementById('gameImage').src='images/videojuego2.png'">JUEGO2</button>
-                
-                <button onclick="document.getElementById('gameImage').src='images/videojuego3.png'">JUEGO3</button>
-                
+                <button onclick="showGame(1)">JUEGO1</button>
+                <button onclick="showGame(2)">JUEGO2</button>
+                <button onclick="showGame(3)">JUEGO3</button>
+            </div>
+            
+            <div id="game1" class="game-container">
+                <div class="text-center">
+                    <h1>Click Santa's Face Game - Nivel 1</h1>
+                    <div class="text">Time Remaining: <span id="timer1" class="font-bold">1:30</span></div>
+                    <div class="text">Score: <span id="score1" class="font-bold">0</span></div>
+                </div>
+            
+                <div id="gameArea1">
+                    <div id="santaFace1" class="" role="img">
+                        <img src="../images/papa_noel_CARA_JUEGO.png" alt="Papá Noel Cara Juego" class="CARAPAPANOEL1">
+                    </div>
+                </div>
+            
+                <div id="gameOver1">
+                    <div>
+                        <h2>Game Over!</h2>
+                        <p>Final Score: <span id="finalScore1">0</span></p>
+                        <button onclick="restartGame(1)">Play Again</button>
+                    </div>
+                </div>
             </div>
 
-            <div class="images-Juego">
-                <img id="gameImage" src="images/choosethegame.jpg" alt="Elige el juego" style="width: 70%; height: 70%;">
-                <button id="boton-jugar">Jugar</button>
+            <div id="game2" class="game-container">
+                <div class="text-center">
+                    <h1>Click Santa's Face Game - Nivel 2</h1>
+                    <div class="text">Time Remaining: <span id="timer2" class="font-bold">1:30</span></div>
+                    <div class="text">Score: <span id="score2" class="font-bold">0</span></div>
+                </div>
+            
+                <div id="gameArea2">
+                    <div id="santaFace2" class="" role="img">
+                        <img src="../images/papa_noel_CARA_JUEGO.png" alt="Papá Noel Cara Juego" class="CARAPAPANOEL2">
+                    </div>
+                </div>
+            
+                <div id="gameOver2">
+                    <div>
+                        <h2>Game Over!</h2>
+                        <p>Final Score: <span id="finalScore2">0</span></p>
+                        <button onclick="restartGame(2)">Play Again</button>
+                    </div>
+                </div>
             </div>
 
+            <div id="game3" class="game-container">
+                <div class="text-center">
+                    <h1>Click Santa's Face Game - Nivel 3</h1>
+                    <div class="text">Time Remaining: <span id="timer3" class="font-bold">1:30</span></div>
+                    <div class="text">Score: <span id="score3" class="font-bold">0</span></div>
+                </div>
+            
+                <div id="gameArea3">
+                    <div id="santaFace3" class="" role="img">
+                        <img src="../images/papa_noel_CARA_JUEGO.png" alt="Papá Noel Cara Juego" class="CARAPAPANOEL3">
+                    </div>
+                </div>
+            
+                <div id="gameOver3">
+                    <div>
+                        <h2>Game Over!</h2>
+                        <p>Final Score: <span id="finalScore3">0</span></p>
+                        <button onclick="restartGame(3)">Play Again</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

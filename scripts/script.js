@@ -70,13 +70,47 @@ function logout() {
     closeProfileMenu();
 }
 
+
+// Función para mostrar el menú de usuario
 function toggleUserMenu() {
-    document.getElementById("user-dropdown").classList.toggle("hidden");
+    const userDropdown = document.getElementById("profile-options");
+    userDropdown.classList.toggle("hidden"); // Alterna la clase "hidden" para mostrar/ocultar el menú
 }
 
-function closeProfileMenu() {
-    document.querySelector('.profile-options').style.display = 'none';
+function openProfile() {
+    document.getElementById("MyProfile").style.display = "flex"; // Abre el perfil
+    closeLetters(); // Cierra las cartas si están abiertas
+    closeLogoutConfirmation(); // Cierra la confirmación de logout si está abierta
 }
+
+function closeProfile() {
+    document.getElementById("MyProfile").style.display = "none"; // Cierra el perfil
+}
+
+function openLetters() {
+    document.getElementById("MyProfileletters").style.display = "flex"; // Abre las cartas
+    closeProfile(); // Cierra el perfil si está abierto
+    closeLogoutConfirmation(); // Cierra la confirmación de logout si está abierta
+}
+
+function closeLetters() {
+    document.getElementById("MyProfileletters").style.display = "none"; // Cierra las cartas
+}
+
+function logout() {
+    document.getElementById("MyProfilelogoutConfirmation").style.display = "flex"; // Muestra la confirmación de logout
+}
+
+function closeLogoutConfirmation() {
+    document.getElementById("MyProfilelogoutConfirmation").style.display = "none"; // Cierra la confirmación de logout
+}
+
+function confirmLogout() {
+    closeLogoutConfirmation(); // Cierra la confirmación
+    toggleUserMenu(); // Alterna el menú de usuario
+    // Aquí puedes agregar la lógica para cerrar sesión
+}
+
 
 // Game functions
 let gameInterval;

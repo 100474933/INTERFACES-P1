@@ -60,15 +60,12 @@
     
 
 }
-
+/* Ocultar elementos de menú */
 .hidden {
     display: none;
 }
 
-.user-menu hidden {
-    cursor: pointer;
-}
-
+/* Icono de perfil */
 .user-menu img {
     width: 40px; 
     height: 40px;
@@ -76,11 +73,8 @@
     cursor: pointer; 
 }
 
-.profile-options hidden {
-    position: absolute;
-}
-
-.profile-options  {
+/* Menú desplegable de usuario */
+.profile-options {
     position: absolute;
     top: 60px;
     right: 10px;
@@ -89,11 +83,91 @@
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 .profile-options li {
     list-style: none;
     padding: 8px;
 }
 
+/* Ocultar elementos de menú */
+.hidden {
+    display: none;
+}
+
+/* Icono de perfil */
+.user-menu img {
+    width: 60px; 
+    height: 60px;
+    margin-right: 50px ;
+}
+
+/* Opciones del menú desplegable */
+.profile-options {
+    position: absolute;
+    top: 90%;
+    right: 10px;
+    background-color: #004d40;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-options li {
+    list-style: none;
+    padding: 8px;
+}
+
+.profile-options li a {
+    color: white;
+    text-decoration: none;
+}
+
+.profile-options li a:hover {
+    color: #80cbc4;
+}
+
+/* Ventanas emergentes */
+.MyProfile, .MyProfileletters, .MyProfilelogoutConfirmation {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(67, 95, 74, 0.411);
+    justify-content: center;
+    align-items: center;
+}
+
+.MyProfile-content, .MyProfileletters-content, .MyProfilelogoutConfirmation-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+/* Botón de cierre */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Confirmación de logout */
+.MyProfilelogoutConfirmation-content button {
+    padding: 10px;
+    margin: 10px;
+    background-color: #004d40;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 .login-btn{
     padding: 5px 10px;
