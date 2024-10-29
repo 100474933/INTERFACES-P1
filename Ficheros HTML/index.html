@@ -26,59 +26,44 @@
             <button  class="login-btn" onclick="openLoginForm()">Iniciar sesión</button>
             <button  class="register-btn" onclick="openRegisterForm()">Registrarse</button>
         </div>
-        
-        <div class="user-menu">
-            <img src="../images/icono_perfil.png" alt="Perfil" onclick="toggleUserMenu()">
-            <div id="profile-options" class="profile-options">
+        <!-- Botón de perfil del usuario -->
+        <div class="profile-buttons hidden">
+            <img src="../images/icono_perfil.png" alt="Perfil" onclick="toggleUserMenu()" style="width: 60px; height: 60px;">
+            <span id="user-profile"></span>
+        </div>
+
+        <!-- Menú desplegable de usuario -->
+        <div id="profile-options" class="profile-options hidden">
+            <ul>
                 <li><a href="#" onclick="openProfile()">Mi perfil</a></li>
-                <li><a href="#"onclick="openLetters()">Mis cartas</a></li>
+                <li><a href="#" onclick="openLetters()">Mis cartas</a></li>
                 <li><a href="#" onclick="logout()">Cerrar sesión</a></li>
-            </div>
-        </div>
-        <!-- Menú de usuario -->
-        <div id="MyProfile" class="MyProfile">
-            <div class="MyProfile-content">
-                <span class="close" onclick="closeProfile()">&times;</span>
-                <h2>Editar Perfil</h2>
-                <form>
-                    <label for="username">Nombre de usuario:</label>
-                    <input type="text" id="username" name="username" value="Nombre de usuario actual">
-        
-                    <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" name="email" value="correo@ejemplo.com">
-                    
-                    <button type="submit">Guardar cambios</button>
-                </form>
-            </div>
-        </div>
-
-        <!-- Menú de mis cartas -->
-        <div id="MyProfileletters" class="MyProfileletters">
-            <div class="MyProfileletters-content">
-                <span class="close" onclick="closeLetters()">&times;</span>
-                <h2>Mis Cartas</h2>
-                <div id="MyProfileletters-Container">
-                    <div class="letter">
-                        <h4>Anastasia Fernández</h4>
-                        <p>Pamplona, 8 años</p>
-                        <p>Querido Papá Noel, este año me he portado muy bien y me gustaría recibir un coche de juguete.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Confirmación de cierre de sesión -->
-        <div id="MyProfilelogoutConfirmation" class="MyProfilelogoutConfirmation">
-            <div class="MyProfilelogoutConfirmation-content">
-                <h2>¿Estás seguro de que quieres cerrar sesión?</h2>
-                <button onclick="confirmLogout()">Sí</button>
-                <button onclick="closeLogoutConfirmation()">No</button>
-            </div>
+            </ul>
         </div>
     </section>
 
-    <section>
-        
-    </section>
+    <!-- Ventanas emergentes para perfil y mis cartas -->
+    <div id="MyProfile" class="MyProfile">
+        <div class="MyProfile-content">
+            <span class="close" onclick="closeProfile()">&times;</span>
+            <h2>Editar Perfil</h2>
+            <form>
+                <input type="text" id="username" name="username" value="username" placeholder="Nombre de usuario">
+                <input type="email" id="email" name="email" value="email" placeholder="Correo electrónico">
+                <button type="submit"onclick="saveProfileChanges()">Guardar cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="MyProfileletters" class="MyProfileletters">
+        <div class="MyProfileletters-content">
+            <span class="close" onclick="closeLetters()">&times;</span>
+            <h2>Mis Cartas</h2>
+            <div id="MyProfileletters-Container">
+                <!-- Aquí se agregarán las cartas -->
+            </div>
+        </div>
+    </div>
 
     <!-- Formulario de inicio de sesión -->
     <div id="login-form" class="form-popup">
@@ -104,20 +89,24 @@
             <input class="formulario-input" type="email" id="register-email" placeholder="Correo electrónico" required>
             <input class="formulario-input" type="text" id="register-city" minlength="3" placeholder="Ciudad" required>
             <input class="formulario-input" type="text" id="register-country" minlength="3" placeholder="País" required>
-            <select class="formulario-input" id="register-gender">
+            <select class="formulario-input" id="register-gender" name="gender">
                 <option value="" disabled selected>Género</option>
                 <option value="male">Masculino</option>
                 <option value="female">Femenino</option>
                 <option value="other">Otro</option>
                 <option value="prefer-not-to-say">Prefiero no decirlo</option>
             </select>
-            <input class="formulario-input" type="number" id="register-children" min="0" placeholder="Número de hijos/hijas">
+            <input class="formulario-input" type="number" id="register-children" name="children" min="0" placeholder="Número de hijos/hijas">
+            
+            <!-- Contenedor para los detalles de cada hijo -->
             <div id="children-details"></div>
+            
             <button class="register-btn" onclick="register()">Aceptar</button>
             <button class="cancel-btn" onclick="closeRegisterForm()">Cancelar</button>
             <button class="clear-btn" onclick="clearRegisterForm()">Limpiar campos</button>
         </div>
     </div>
+    
     
     <!-- Sección de Home -->
     <section id="home">
@@ -208,24 +197,21 @@
         <h2>¡Envía tu Carta a Papá Noel!</h2>
         <div class="contacto-container">
             <div class="Formulario-carta">
-                <form>
-                    <input class="caja-formulario" type="text" placeholder="Nombre"  required>
-                    
-                    <input class="caja-formulario" type="email" placeholder="Email" required>
-                    
-                    <input class="caja-formulario" type="text" placeholder ="Pais" required>
-                    
-                    <input class="caja-formulario" type="text" placeholder="Ciudad" required>
-                    
-                    <input class="texto-carta" type="text" placeholder="Escribe aquí tu carta" required></textarea>
+                <form id="cartaForm">
+                    <input id="nombre" class="caja-formulario" type="text" placeholder="Nombre" required>
+                    <input id="email" class="caja-formulario" type="email" placeholder="Email" required>
+                    <input id="pais" class="caja-formulario" type="text" placeholder="País" required>
+                    <input id="ciudad" class="caja-formulario" type="text" placeholder="Ciudad" required>
+                    <textarea id="cartaTexto" class="texto-carta" placeholder="Escribe aquí tu carta" required></textarea>
                     <input class="enviar-form" type="submit" value="Enviar Carta">
                 </form>
             </div>
-            <div class="form-image"></div>
-                <img class= "papanoelcartaesquina" src="../images/papanoelfelizcartas.png" alt="Papá Noel">
+            <div class="form-image">
+                <img class="papanoelcartaesquina" src="../images/papanoelfelizcartas.png" alt="Papá Noel">
             </div>
         </div>
     </section>
+
 
     <!-- Sección de Juega -->
 
@@ -234,80 +220,51 @@
             <h2>Juega con Papá Noel</h2>
             <h3>¡Diviértete con nuestros juegos!</h3>
         </div>
+        <!-- Menú de botones para seleccionar los juegos -->
+        <div class="game-buttons">
+            <button id="button1" class="game-button">Click Santa's Face Game</button>
+            <button id="button2" class="game-button">Christmas Lights Memory Game</button>
+        </div>
+
         <div class="juego-container">
-            <div class="botones-juego">
-                <button onclick="showGame(1)">JUEGO1</button>
-                <button onclick="showGame(2)">JUEGO2</button>
-                <button onclick="showGame(3)">JUEGO3</button>
-            </div>
-            
+            <!-- Juego 1: Click Santa's Face -->
             <div id="game1" class="game-container">
                 <div class="text-center">
-                    <h1>Click Santa's Face Game - Nivel 1</h1>
+                    <h1>Click Santa's Face Game</h1>
                     <div class="text">Time Remaining: <span id="timer1" class="font-bold">1:30</span></div>
                     <div class="text">Score: <span id="score1" class="font-bold">0</span></div>
                 </div>
-            
                 <div id="gameArea1">
                     <div id="santaFace1" class="santa-face">
                         <img src="../images/papa_noel_CARA_JUEGO.png" alt="Papá Noel Cara Juego" class="CARAPAPANOEL1">
                     </div>
                 </div>
-            
-                <div id="gameOver1">
-                    <div>
-                        <h2>Game Over!</h2>
-                        <p>Final Score: <span id="finalScore1">0</span></p>
-                        <button onclick="restartGame(1)">Play Again</button>
-                    </div>
-                </div>
             </div>
 
+            <!-- Juego 2: Christmas Lights Memory Game -->
             <div id="game2" class="game-container">
                 <div class="text-center">
-                    <h1>Click Santa's Face Game - Nivel 2</h1>
+                    <h1>Christmas Lights Memory Game</h1>
                     <div class="text">Time Remaining: <span id="timer2" class="font-bold">1:30</span></div>
                     <div class="text">Score: <span id="score2" class="font-bold">0</span></div>
                 </div>
-            
                 <div id="gameArea2">
-                    <div id="santaFace2" class="" >
-                        <img src="../images/papa_noel_CARA_JUEGO.png" alt="Papá Noel Cara Juego" class="CARAPAPANOEL2">
-                    </div>
-                </div>
-            
-                <div id="gameOver2">
-                    <div>
-                        <h2>Game Over!</h2>
-                        <p>Final Score: <span id="finalScore2">0</span></p>
-                        <button onclick="restartGame(2)">Play Again</button>
-                    </div>
+                    <!-- Luces de colores para el juego de memoria -->
+                    <div id="light1" class="light red-light"></div>
+                    <div id="light2" class="light green-light"></div>
+                    <div id="light3" class="light blue-light"></div>
+                    <div id="light4" class="light yellow-light"></div>
                 </div>
             </div>
-
-            <div id="game3" class="game-container">
-                <div class="text-center">
-                    <h1>Click Santa's Face Game - Nivel 3</h1>
-                    <div class="text">Time Remaining: <span id="timer3" class="font-bold">1:30</span></div>
-                    <div class="text">Score: <span id="score3" class="font-bold">0</span></div>
-                </div>
             
-                <div id="gameArea3">
-                    <div id="santaFace3" class="">
-                        <img src="../images/papa_noel_CARA_JUEGO.png" alt="Papá Noel Cara Juego" class="CARAPAPANOEL3">
-                    </div>
-                </div>
-            
-                <div id="gameOver3">
-                    <div>
-                        <h2>Game Over!</h2>
-                        <p>Final Score: <span id="finalScore3">0</span></p>
-                        <button onclick="restartGame(3)">Play Again</button>
-                    </div>
-                </div>
+            <div id="gameOverMessage" class="game-over">
+                <h2>Game Over</h2>
+                <p>¡Gracias por jugar! Tu puntaje final es: <span id="finalScore">0</span></p>
+                <button onclick="restartGame1()">Jugar de nuevo</button>
             </div>
         </div>
-    </section>
+     </section>
+     
 
     <section id="pie-pagina">
         <div class="pie-pagina">
@@ -321,5 +278,10 @@
 
     </section>
     <script src="../scripts/script.js"></script>
+    <script src="../scripts/countdown.js"></script>
+    <script src="../scripts/cartas.js"></script>
+    <script src="../scripts/juego.js"></script>
+    <script src="../scripts/auth.js"></script>
+    <script src="../scripts/register.js"></script>
 </body>
 </html>
