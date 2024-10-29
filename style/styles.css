@@ -1,4 +1,6 @@
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Barra de navegación */
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 #barra-nav {
     top: 0;
     left: 0;
@@ -9,130 +11,98 @@
     background: rgba(190, 224, 190, 0.7); 
     width: 100%;
     box-sizing: border-box;
-    justify-content: center;
-}
-
-#barra-nav h2 {
-    line-height: 0.8; 
-    margin: 0; /* Elimina el margen */
-    padding: 0 20px; /* Añade padding horizontal */
-    color:#004d40
-    
-}
-
-.nav-logo {
-    display: flex;  /*Ponemos el logo y el título en fila*/
-    
-}
-
-.nav-menu {
-    width: 100%;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-.atrib-menu  {
-    margin: 20px 20px 20px 0;
-    text-align: center;
-    text-decoration: none;
-    color: #0a0101; 
-    
-}
-
-.atrib-menu:hover{    /*Solo cuando pasas el ratón por encima*/
-    text-decoration: underline;
+    justify-content: space-between; 
+    padding: 10px 20px; 
 }
 
 .titulo {
-    margin-left: 10px;
-    margin-right: 0px;
-    height: auto;
-    box-sizing: border-box;
-    color: #01030f; 
+    color: #004d40;
 }
 
+/* Estilo para el menú */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.atrib-menu {
+    margin: 0 20px; 
+    text-align: center;
+    text-decoration: none;
+    color: #0a0101; 
+}
+
+ /* Cambia el estilo al pasar el ratón */
+.atrib-menu:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para los botones de autenticación */
 .auth-buttons {
     display: flex;
-    padding-left: 10px;
-    gap: 10px;
-    margin-right: 5%;
-    
-
+    gap: 10px; 
 }
+
+/* Estilo de los botones */
+.login-btn, .register-btn {
+    padding: 5px 10px;
+    border: none;
+    background-color: #004d40;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover, .register-btn:hover {
+    background-color: #00332a; 
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Ocultar elementos de menú */
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .hidden {
     display: none;
 }
 
-/* Icono de perfil */
-.user-menu img {
-    width: 40px; 
-    height: 40px;
-    border-radius: 50%; 
-    cursor: pointer; 
-}
-
-/* Menú desplegable de usuario */
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Estilo para el menú desplegable del perfil */
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .profile-options {
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    background-color: #004d40;
+    position: absolute; 
+    top: 100%; 
+    right: 1%; 
+    background-color: #004d40; 
     border-radius: 8px;
     padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    z-index: 10; 
 }
 
+/* Estilo para las opciones del perfil */
 .profile-options li {
-    list-style: none;
-    padding: 8px;
-}
-
-/* Ocultar elementos de menú */
-.hidden {
-    display: none;
-}
-
-/* Icono de perfil */
-.user-menu img {
-    width: 60px; 
-    height: 60px;
-    margin-right: 50px ;
-}
-
-/* Opciones del menú desplegable */
-.profile-options {
-    position: absolute;
-    top: 90%;
-    right: 10px;
-    background-color: #004d40;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.profile-options li {
-    list-style: none;
-    padding: 8px;
+    list-style: none; 
+    margin: 5px 5px; 
 }
 
 .profile-options li a {
-    color: white;
-    text-decoration: none;
+    color: white; 
+    text-decoration: none; 
+    display: block; 
 }
 
+/* Estilo para cuando se pase el cursor por las opciones del perfil */
 .profile-options li a:hover {
-    color: #80cbc4;
+    color: #80cbc4; 
 }
 
-/* Ventanas emergentes */
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Estilos para ventanas emergentes */
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .MyProfile, .MyProfileletters, .MyProfilelogoutConfirmation {
     display: none;
     position: fixed;
     z-index: 10;
-    left: 0;
-    top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(67, 95, 74, 0.411);
@@ -140,6 +110,12 @@
     align-items: center;
 }
 
+.MyProfile{
+    display: none;
+    flex-direction: column;
+}
+
+/* Estilos para el contenido de las ventanas emergentes */
 .MyProfile-content, .MyProfileletters-content, .MyProfilelogoutConfirmation-content {
     background-color: white;
     padding: 20px;
@@ -149,38 +125,8 @@
     position: relative;
 }
 
-/* Botón de cierre */
-.close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-/* Confirmación de logout */
-.MyProfilelogoutConfirmation-content button {
-    padding: 10px;
-    margin: 10px;
-    background-color: #004d40;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.login-btn{
-    padding: 5px 10px;
-    border:none;
-    background-color: #004d40;
-    color: #fff;
-    cursor: pointer;    /*Cambiamos cursor al pasar por los botones de inicio sesión y registro*/
-    
-}
-
-
-/*formulario pop-up*/
-.form-popup{
+/* Estilos para formularios emergentes */
+.form-popup {
     display: none;
     position: fixed;
     top: 50%;
@@ -194,7 +140,7 @@
     border-radius: 8px;
     background-color: #00796bce; 
 }
-.form-popup h2{
+.form-popup h2 {
     color: #fff;
     text-align: center;
     box-shadow: #004d40;
@@ -204,21 +150,29 @@
     padding: 20px 20px;
 }
 
-.formulario-input{
-    padding : 10px;
+.formulario-input {
+    padding: 10px;
     width: 90%;
 }
 
-.login-btn, .register-btn, .cancel-btn, .clear-btn{
+.login-btn, .register-btn, .cancel-btn, .clear-btn {
     letter-spacing: 20%;
     text-transform: uppercase;
-    margin: 5% 0 5% 0;
-
+    margin: 5% 0;
 }
 
 
+#children-details {
+    max-height: 300px; 
+    overflow-y: auto; /* Habilita el desplazamiento vertical */
+    margin-top: 10px;
+    padding-right: 10px;
+}
 
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Sección de inicio */
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
 #home {
     background-color: #e0f7fa;
     color: #00796b; 
@@ -230,7 +184,9 @@
     border-radius: 10px;
 }
 
-/* Sección de Papá Noel */
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Sección papa noel */
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 #papa_noel {
     padding: 50px;
     background-color: #6da78f; 
@@ -257,10 +213,9 @@ h1{
 /* Columna Izquierda: Imagen de Papá Noel */
 .papa-noel-image img {
     width: 100%;
-    max-width: 600px;       /*Para que no haya problemas a la hora de hacer la ventana más pequeña*/
+    max-width: 600px;      
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /*Da un sombreado de la imagen sobre el fondo*/
 }
 
 /* Columna Derecha: Texto sobre Papá Noel */
@@ -290,8 +245,9 @@ h1{
     color: #d32f2f; 
 }
 
-
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Sección de Cartas */
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
 #cartas {
     background-color: #e0f7fa;
     color: #00796b; 
@@ -351,7 +307,10 @@ h2 {
     color: #666;
 }
 
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Sección de Contacto */
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
 #contacto {
     text-align: center ;
     background-color: #6da78f; 
@@ -409,8 +368,9 @@ h2 {
 .contacto-container {
     display: flex;
 }
-
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Sección de Juego */
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////*/
 #juega {
     padding-top: 200px ;
     background-color: #e0f7fa; 
@@ -484,11 +444,36 @@ h2 {
 }
 
 
+/* Estilos para los botones de selección de juego */
+.game-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
 
+.game-button {
+    padding: 10px 20px;
+    background-color: #00796b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
+.game-button:hover {
+    background-color: #004d40;
+}
 
-
-
+.juego-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
 /* Contenedor del juego */
 .game-container {
     display: none; /* Oculto por defecto */
@@ -496,8 +481,9 @@ h2 {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
-    text-align: center;
     margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
 }
 
 /* Título del juego */
@@ -515,7 +501,7 @@ h2 {
 }
 
 /* Área del juego */
-#gameArea1, #gameArea2, #gameArea3 {
+#gameArea1, #gameArea2 {
     position: relative;
     width: 100%;
     height: 300px;
@@ -526,74 +512,64 @@ h2 {
     margin-top: 20px;
 }
 
-/* Imagen de Papá Noel */
+
+.santa-face {
+    position: absolute; /* Permite posicionarlo en cualquier parte de gameArea1 */
+    cursor: pointer;
+}
+
 .CARAPAPANOEL1 {
-    position: absolute;
-    width: 35%;
-    height: 25%;
-    animation: bounce-slow 2s infinite;
-}
-
-@keyframes bounce-slow {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(200%);
-    }
-}
-.CARAPAPANOEL2 {
-    position: absolute;
-    width: 35%; 
-    height: 25%;
-    animation: bounce-medium 2s infinite;
+    width: 15%;
+    height: auto;
 }
 
 
-@keyframes bounce-medium {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(300%);
-    }
-    75% {
-        transform: translateY(100%);
-    }
-    75% {
-        transform: translateX(-100%);
-    }
+.light {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 20px;
+    opacity: 0.5;
+    cursor: pointer;
 }
 
-.CARAPAPANOEL3 {
-    position: absolute;
-    width: 35%; 
-    height: 25%;
-    animation: bounce-rapido 2s infinite;
+/* Colores de las luces */
+.red-light { background-color: red; }
+.green-light { background-color: green; }
+.blue-light { background-color: blue; }
+.yellow-light { background-color: yellow; }
+
+/* Efecto de iluminación */
+.light.active {
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
 }
 
-@keyframes bounce-rapido {
-    100%, 100% {
-        transform: translateY(0);
-    }
-    75% {
-        transform: translateY(100%);
-    }
-    20% {
-        transform: translateX(-200%);
-    }
-    50% {
-        transform: translateY(300%);
-}
-}
-
-
-/* Área de fin del juego */
-#gameOver1, #gameOver2, #gameOver3 {
+/* Estilo para el mensaje de "Game Over" */
+.game-over {
     display: none; /* Oculto por defecto */
-    margin-top: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente */
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 10;
 }
 
+.game-over h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.game-over p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
 
 /* Pie de página */
 .pie-pagina {
@@ -618,7 +594,9 @@ h2 {
     
 }
 
-
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*PARA ADAPTAR A LAS PANTALLAS*/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 @media only screen and (max-width: 768px) and (min-width: 601px){
     #barra-nav {
         flex-direction: column; /* Cambiamos lña disposición a columnas para que quede mejor en movil y tablet */
